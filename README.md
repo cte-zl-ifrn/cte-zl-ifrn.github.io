@@ -2,8 +2,6 @@
 
 A Coordenação de Tecnologias da Educação (CTE) do [Campus Avançado Nata-Zona Leste (ZL)](https://ead.ifrn.edu.br/portal/) do [Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN)](https://ifrn.edu.br/) utiliza um ecossistema de aplicações para suportar o Ambiente Virtual de Aprendizagem (AVA). Neste site existe uma visão de como este ecossistema foi arquitetado para que você possa tentar se inspirar e reproduzir em seu ambiente a fim de melhorar a oferta de serviço AVA a sua comunidade acadêmica.
 
-{% include toc.html html=content %}
-
 ## Sobre o modelo C4
 
 Neste documento será utilizada a proposta descrita no [C4 model](https://c4model.com/), a qual é descrita como um modelo com hierárquico de 4 níveis de "diagramas de arquitetura de software" dividido em **contexto, container, componente e código**, onde cada nível "fornece diferentes níveis de abstração, cada um dos quais é relevante para um público diferente". Sem prescrição de notação específica, não necessita de ferramentas para diagramação, podendo inclusive ser feito com um quadro branco ou mesmo a UML.
@@ -34,13 +32,13 @@ Estes diagramas foram construídos usando o https://app.diagrams.net/ e podem se
 
 ### Contexto do sistema
 
-![Contexto do sistema](integrador_suap_moodle.svg)
+![Contexto do ecossistema](integrador_suap_moodle.svg)
 
 ### Containers
 
 #### Diagrama 1
 
-Colocar os diagramas aqui.
+![System - Portal](integrador_suap_moodle-system-portal.svg)
 
 #### Diagrama 2
 
