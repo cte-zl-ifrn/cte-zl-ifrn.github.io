@@ -2,7 +2,7 @@
 
 A Coordenação de Tecnologias da Educação (CTE) do [Campus Avançado Nata-Zona Leste (ZL)](https://ead.ifrn.edu.br/portal/) do [Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN)](https://ifrn.edu.br/) utiliza um ecossistema de aplicações para suportar o Ambiente Virtual de Aprendizagem (AVA). Neste site existe uma visão de como este ecossistema foi arquitetado para que você possa tentar se inspirar e reproduzir em seu ambiente a fim de melhorar a oferta de serviço AVA a sua comunidade acadêmica.
 
-{:toc}
+{% include toc.html html=content %}
 
 ## Sobre o modelo C4
 
