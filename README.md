@@ -2,64 +2,19 @@
 
 A Coordenação de Tecnologias da Educação (CTE) do [Campus Avançado Nata-Zona Leste (ZL)](https://ead.ifrn.edu.br/portal/) do [Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN)](https://ifrn.edu.br/) utiliza um ecossistema de aplicações para suportar o Ambiente Virtual de Aprendizagem (AVA). Neste site existe uma visão de como este ecossistema foi arquitetado para que você possa tentar se inspirar e reproduzir em seu ambiente a fim de melhorar a oferta de serviço AVA a sua comunidade acadêmica.
 
-## Sobre o modelo C4
+Se você quiser ver o desenho arquitetural da solução ela está documentada usando o [C4 Model](c4_model). Agora, se você tem tempo, segue a documentação rápida do que fazer (aqui não teremos os manuais de instalação do Moodle, do Plugin auth_suap ou do SUAP).
 
-Neste documento será utilizada a proposta descrita no [C4 model](https://c4model.com/), a qual é descrita como um modelo com hierárquico de 4 níveis de "diagramas de arquitetura de software" dividido em **contexto, container, componente e código**, onde cada nível "fornece diferentes níveis de abstração, cada um dos quais é relevante para um público diferente". Sem prescrição de notação específica, não necessita de ferramentas para diagramação, podendo inclusive ser feito com um quadro branco ou mesmo a UML.
+## No Moodle
 
-Independentemente da notação que você usa, recomenda-se que cada elemento inclua um **nome**, o **tipo de elemento** (ou seja, "Pessoa", "Sistema de Software", "Container" ou "Componente"), uma opção de **tecnologia** (se apropriado) e algum **texto descritivo**.
+Edite o `local_settings.py` de tua instalação e defina a configuração `MOODLE_SYNC_TOKEN` com o valor e `MOODLE_SYNC_URL`.
 
-Certifique-se de ter legenda para descreva a notação que esteja usando. Isso deve abranger cores, formas, acrônimos, estilos de linha, bordas, dimensionamento, etc. Use a mesma notação em todos os níveis de detalhe.
+## No PORTAL_AVA
 
-### Nível 1: Contexto do sistema
+Depois de colocar o [PORTAL_AVA](https://github.com/cte-zl-ifrn/portal__ava) para executar conforme o README do software, configure ao menos a variável de ambiente `SUAP_EAD_KEY` em `confs/enabled/avaportal.env`. Outras configurações serão necessárias, esta é necessária para a autenticação do SUAP neste serviço. Também será necessário configura a URL e o token de autenticação de cada Moodle de cada campus.
 
-O nível 1, um diagrama de contexto do sistema, mostra o sistema de software que você está construindo e como ele se encaixa no mundo em termos das pessoas que o utilizam e dos outros sistemas de software com os quais ele interage.
+## No SUAP
 
-### Nível 2: Containers
+Edite o `local_settings.py` de tua instalação e defina as configurações:
 
-O nível 2, um diagrama de container, amplia o sistema de software e mostra os containers (aplicativos, armazenamentos de dados, microservices, etc.) que compõem esse sistema de software. As decisões de tecnologia também são uma parte fundamental desse diagrama.
-
-### Nível 3: Componentes
-
-O nível 3, um diagrama de componentes, amplia um container individual para mostrar os componentes dentro dele. Esses componentes devem mapear para abstrações reais (por exemplo, um agrupamento de código) em sua base de código.
-
-### Nível 4: Códigos
-
-O nível 3, um diagrama de componentes, amplia um container individual para mostrar os componentes dentro dele. Esses componentes devem mapear para abstrações reais (por exemplo, um agrupamento de código) em sua base de código.
-
-## Arquitetura
-
-Estes diagramas foram construídos usando o https://app.diagrams.net/ e podem ser [baixado daqui](integrador_suap_moodle.drawio).
-
-### Contexto do sistema
-
-![Contexto do ecossistema](integrador_suap_moodle.svg)
-
-### Containers
-
-#### Diagrama 1
-
-![System - Portal](integrador_suap_moodle-system-portal.svg)
-
-#### Diagrama 2
-
-Colocar os diagramas aqui.
-
-### Componentes
-
-#### Diagrama 1
-
-Colocar os diagramas aqui.
-
-#### Diagrama 2
-
-Colocar os diagramas aqui.
-
-### Códigos
-
-#### Diagrama 1
-
-Colocar os diagramas aqui.
-
-#### Diagrama 2
-
-Colocar os diagramas aqui.
+* `MOODLE_SYNC_URL` com a URL raiz do AVA_PORTAL (ex.: "https://ava.if.edu.br/").
+* `MOODLE_SYNC_TOKEN` com o valor que foi o que você especificou no **PORTAL_AVA**, arquivo `confs/enabled/avaportal.env`, variável de ambiente `SUAP_EAD_KEY`.
