@@ -30,7 +30,7 @@ Estes diagramas foram construídos usando o https://app.diagrams.net/ e podem se
 
 ![Contexto](media/integracao_suap_moodle-contexto.svg)
 
-Este ecossistema é composto por 3 aplicações, SUAP, [Portal](https://github.com/cte-zl-ifrn/portal__ava) e [Plugin](https://github.com/cte-zl-ifrn/moodle__auth_suap):
+Este ecossistema é composto por 3 aplicações, [SUAP](https://gitlab.ifrn.edu.br/cosinf/suap) [Portal](https://github.com/cte-zl-ifrn/portal__ava) e [Plugin](https://github.com/cte-zl-ifrn/moodle__auth_suap):
 
 1. **SUAP** - Responsável por gerir a situação acadêmica dos alunos. No SUAP um curso é formado por vários componentes currículares.
 2. **Portal AVA** - Responsável orquestrar para qual **Moodle** o sincronização do diário deve ir. Funciona como um middleware e acrescenta a funcionalidade de portal.
