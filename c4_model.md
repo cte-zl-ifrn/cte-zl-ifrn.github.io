@@ -21,21 +21,3 @@ O nível 3, um diagrama de componentes, amplia um container individual para most
 ## Nível 4: Códigos
 
 O nível 4, um diagrama de classes, amplia um componente individual para mostrar as classes dentro dele. *Ainda não usamos neste projeto.*
-
-## Arquitetura
-
-Estes diagramas foram construídos usando o https://app.diagrams.net/ e podem ser [baixado daqui](media/integracao_suap_moodle.drawio).
-
-### Contexto
-
-![Contexto](media/integracao_suap_moodle-contexto.svg)
-
-Este ecossistema é composto por 3 aplicações, [SUAP](https://gitlab.ifrn.edu.br/cosinf/suap) [Portal](https://github.com/cte-zl-ifrn/portal__ava) e [Plugin](https://github.com/cte-zl-ifrn/moodle__auth_suap):
-
-1. **SUAP** - Responsável por gerir a situação acadêmica dos alunos. No SUAP um curso é formado por vários componentes currículares.
-2. **Portal AVA** - Responsável orquestrar para qual **Moodle** o sincronização do diário deve ir. Funciona como um middleware e acrescenta a funcionalidade de portal.
-3. **Plugin auth_suap do Moodle** - Responsável receber a requisição de sincronização vinda do **Portal** e criar os usuários (docentes e discentes), categorias, curso e grupo (1 para cada pólo), depois inscreve os alunos e professores em seus respectivos papéis e agrupa os alunos nos grupos de seus respectivos grupos.
-
-### Containers
-
-![Containers](media/integracao_suap_moodle-container.svg)
