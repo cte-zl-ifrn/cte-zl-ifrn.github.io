@@ -73,13 +73,23 @@ Este ecossistema é composto por 3 aplicações, [SUAP](https://gitlab.ifrn.edu.
 
 ## Como usar o Sentry com o Moodle
 
-O Sentry é uma aplicação open source escrita em Python para logar erros de aplicações e agregar informações a eles.
-### No Moodle:
-Instalar as dependências do Sentry dentro da pasta do moodle. 
+### Sobre o Sentry
 
-```composer require sentry/sdk```
+O Sentry é uma aplicação open source escrita em Python para logar erros de aplicações e agregar informações a eles. Ele possui clientes em diversas linguagens como o PHP.
 
-**Após a instalação, substituir o [config.php](https://github.com/cte-zl-ifrn/moodle_sentry/blob/master/config.php) e preencher os dados de acordo com o seu banco**.
+### Pré-requisitos
+
+Será necessário que você tenha o **composer** instalado.
+
+### Processo de instalação
+
+Instalar as dependências do Sentry na pasta raiz do Moodle.
+
+```bash
+composer require sentry/sdk
+```
+
+Após a instalação, substituir o [config.php](https://github.com/cte-zl-ifrn/moodle_sentry/blob/master/config.php) e preencher os dados de acordo com o seu banco.
 
 ## Quem somos
 
