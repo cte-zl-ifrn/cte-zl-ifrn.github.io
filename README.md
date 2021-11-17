@@ -12,6 +12,7 @@ Se você não tem tempo e já tem noção do que é este ecossistema, segue a do
 * [Repositório no GitHub do auth_suap](https://github.com/cte-zl-ifrn/moodle__auth_suap).
 * [Pepositório no GitHub do Portal AVA](https://github.com/cte-zl-ifrn/portal__ava).
 * [Repositório no GitLab do SUAP no IFRN](https://gitlab.ifrn.edu.br/cosinf/suap).
+* [Repositório no Github do Moodle Sentry](https://github.com/cte-zl-ifrn/moodle_sentry)
 
 > Primeiro sua organização deverá ter um termo de cooperação com o IFRN antes que você tenha acesso ao fonte do SUAP.
 
@@ -72,7 +73,13 @@ Este ecossistema é composto por 3 aplicações, [SUAP](https://gitlab.ifrn.edu.
 
 ## Como usar o Sentry com o Moodle
 
-Escrevam aqui.
+O Sentry é uma aplicação open source escrita em Python para logar erros de aplicações e agregar informações a eles.
+### No Moodle:
+Instalar as dependências do Sentry dentro da pasta do moodle. 
+
+```composer require sentry/sdk```
+
+**Após a instalação, substituir o [config.php](https://github.com/cte-zl-ifrn/moodle_sentry/blob/master/config.php) e preencher os dados de acordo com o seu banco**
 
 ## Quem somos
 
