@@ -70,6 +70,10 @@ Este ecossistema é composto por 3 aplicações, [SUAP](https://gitlab.ifrn.edu.
 >
 > ![Containers](media/diario.jpg)
 
+## Como usar o Sentry com o Moodle
+
+Escrevam aqui.
+
 ## Quem somos
 
 * **CTE** - [Coordenação de Tecnologias da Educação](https://ead.ifrn.edu.br/portal/institucional/estrutura-administrativa/dg/dead/te/)
