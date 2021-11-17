@@ -79,7 +79,7 @@ Instalar as dependências do Sentry dentro da pasta do moodle.
 
 ```composer require sentry/sdk```
 
-**Após a instalação, substituir o [config.php](https://github.com/cte-zl-ifrn/moodle_sentry/blob/master/config.php) e preencher os dados de acordo com o seu banco**
+**Após a instalação, substituir o [config.php](https://github.com/cte-zl-ifrn/moodle_sentry/blob/master/config.php) e preencher os dados de acordo com o seu banco**.
 
 ## Quem somos
 
