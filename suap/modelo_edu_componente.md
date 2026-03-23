@@ -18,6 +18,7 @@ classDiagram
         descricao_historico: String!
         tipo: TipoComponente!
         sigla: String!!
+        diretoria: Diretoria!
         nivel_ensino: NivelEnsino!
         ativo: Boolean!
 
@@ -92,6 +93,7 @@ classDiagram
     Componente "N" --> "1" TipoComponente
     Componente "N" --> "1" NivelEnsino
     Componente "N" --> "1" GrupoAtuacao
+    Componente "N" --> "1" Diretoria
 
     ComponenteCurricular "N" --> "1" Matriz
     ComponenteCurricular "N" --> "1" Componente
