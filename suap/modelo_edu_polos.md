@@ -40,15 +40,15 @@ classDiagram
         telefone_principal: String
         telefone_secundario: String
     }
-    class CoordenadorPolo {
-        polo: Polo!
-        vinculo: Vinculo!
-        titular: Boolean!
-    }
     class TutorPolo {
         polo: Polo!
         vinculo: Vinculo!
         cursos: set[CursoCampus]
+    }
+    class CoordenadorPolo {
+        polo: Polo!
+        vinculo: Vinculo!
+        titular: Boolean!
     }
     class AtividadePolo {
         polo: Polo!
