@@ -86,3 +86,39 @@ Dada uma matrícula em um diário, é possível identificar o `NivelEnsino` de 4
 2. `Matricula -> Diario -> Turma -> CursoCampus -> MatrizCurso -> Matriz -> NivelEnsino`
 3. `Matricula -> Diario -> Turma -> CursoCampus -> MatrizCurso -> Matriz -> ComponenteCurricular -> Componente -> NivelEnsino`
 4. `Matricula -> Aluno -> NivelEnsino`
+
+
+## EixoTecnologico - Digrama
+
+```mermaid
+classDiagram
+    class Turno {
+        descricao: String!!
+        codigo_enade: String
+    }
+    class Aluno {
+        turno: Turno
+        codigo_inep: String
+    }
+    class Diario {
+        turno: Turno
+    }
+    class Turma {
+        turno: Turno
+    }
+    class TurmaMinicurso {
+        turno: Turno
+    }
+    Turno "1" --> "n" Aluno
+    Turno "1" --> "n" Diario
+    Turno "1" --> "n" Turma
+    Turno "1" --> "n" TurmaMinicurso
+```
+
+Dada uma matrícula em um diário, é possível identificar o `EixoTecnologico` de 2 formas, qual usar?
+
+1. `Aluno -> Turno`
+1. `Aluno -> Matricula -> TurmaMiniCurso -> Turno`
+2. `Aluno -> Matricula -> Diario -> Turno`
+3. `Aluno -> Matricula -> Diario -> Turma -> Turno`
+
