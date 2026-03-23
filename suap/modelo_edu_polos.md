@@ -17,7 +17,7 @@ classDiagram
         _: VerDiagramCadastroGerais
     }
     class CursoCampus {
-        _: VerDiagramaCursso
+        _: VerDiagramaCursos
     }
     class Sala {
         _: VerDiagramCadastroGerais
@@ -60,10 +60,9 @@ classDiagram
         data_fim: DateTime!
         confirmada: Boolean!
     }
-    class HorarioPolo {
-        polo: Polo!
-        horario_funcionamento: HorarioFuncionamentoPolo!
-        dia_semana: Integer!
+    class Turno {
+        descricao: String!!
+        codigo_enade: String
     }
     class HorarioFuncionamentoPolo {
         polo: Polo!
@@ -71,6 +70,11 @@ classDiagram
         numero: Integer!
         inicio: String!
         termino: String!
+    }
+    class HorarioPolo {
+        polo: Polo!
+        horario_funcionamento: HorarioFuncionamentoPolo!
+        dia_semana: Integer!
     }
     class HorarioTutorPolo {
         tutor: TutorPolo!
@@ -96,13 +100,14 @@ classDiagram
     CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
     TutorPolo "n" -- "n" CursoCampus
-    AtividadePolo "n" <-- "1" IfrnId
 
+    AtividadePolo "n" <-- "1" IfrnId
     AtividadePolo "n" <-- "1" Sala
-    HorarioFuncionamentoPolo "n" <-- "1" Turno
-    HorarioPolo "n" <-- "1" HorarioFuncionamentoPolo
     
-    HorarioCoordenadorPolo "1" --> "n" HorarioCoordenadorPolo
+    HorarioFuncionamentoPolo "n" <-- "1" Turno
+    HorarioFuncionamentoPolo "1" <-- "n" HorarioPolo
+    HorarioFuncionamentoPolo "1" <-- "n" HorarioTutorPolo
+    HorarioFuncionamentoPolo "1" <-- "n" HorarioCoordenadorPolo
 ```
 
 > **HorarioPolo**, **HorarioCoordenadorPolo** e **HorarioTutorPolo**
