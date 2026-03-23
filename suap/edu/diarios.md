@@ -1,6 +1,6 @@
-# SUAP Edu
+# SUAP Edu - Diários
 
-## Curso - Digrama
+## Digrama
 
 ```mermaid
 classDiagram
@@ -383,30 +383,6 @@ classDiagram
     class TipoProfessorDiario{
         descricao: String!!
     }
-    class ConfiguracaoAvaliacao{
-        diario: Diario
-        etapa: Integer
-        forma_calculo: Integer!
-        divisor: Integer
-        maior_nota: Boolean!
-        menor_nota: Boolean!
-        autopublicar: Boolean!
-        observacao: String
-    }
-    class ItemConfiguracaoAvaliacao{
-        configuracao_avaliacao: ConfiguracaoAvaliacao!
-        tipo: int!
-        sigla: String
-        descricao: String!
-        data: Date
-        nota_maxima: int
-        peso: int
-    }
-    class NotaAvaliacao{
-        matricula_diario: MatriculaDiario!
-        item_configuracao_avaliacao: ItemConfiguracaoAvaliacao!
-        nota: Nota
-    }
     class Aula{
         professor_diario: ProfessorDiario!
         etapa: Integer!
@@ -485,98 +461,35 @@ classDiagram
     ProfessorDiario --> Professor
     ProfessorDiario --> TipoProfessorDiario
 
-    NotaAvaliacao --> MatriculaDiario
-    NotaAvaliacao --> ItemConfiguracaoAvaliacao
-
-    ItemConfiguracaoAvaliacao --> ConfiguracaoAvaliacao
-
-    ConfiguracaoAvaliacao --> Diario
-
     Falta --> MatriculaDiario
     Falta --> Aula
     Falta --> AbonoFaltas
 
     Aula --> ProfessorDiario
-    Aula --> ProfessorDiario
-
 ```
 
 
-> **ComponenteCurricular**
-> 1. tipo = `[[1, 'Regular'], [2, 'Seminário'], [3, 'Prática Profissional'], [4, 'Trabalho de Conclusão de Curso'], [5, 'Atividade de Extensão'], [6, 'Prática como Componente Curricular'], [7, 'Visita Técnica / Aula da Campo'], [8, 'Componentes Extracurriculares']]`
-> 2. tipo_estagio_docente = `[[1, 'Estágio Docente I'], [2, 'Estágio Docente II'], [3, 'Estágio Docente III'], [4, 'Estágio Docente IV'], [5, 'Estágio Docente de Matriz Anterior']]`
-> 3. tipo_modulo = `[[1, 'Módulo I'], [2, 'Módulo II'], [3, 'Módulo III'], [4, 'Módulo IV'], [5, 'Módulo V'], [6, 'Módulo VI'], [7, 'Módulo VII'], [8, 'Módulo VIII'], [9, 'Módulo IX'], [10, 'Módulo X'], [11, 'Módulo XI'], [12, 'Módulo XII']]`
-> 4. qtd_avaliacoes = `[[0, 'Zero'], [1, 'Uma'], [2, 'Duas'], [3, 'Três'], [4, 'Quatro']]`
-
-
-> **Curso**
-> 1. periodo_letivo= `[[1, '1'], [2, '2']]`
-> 2. periodicidade= `[[1, 'Anual'], [2, 'Semestral'], [3, 'Livre']]`
-> 3. tipo_hora_aula= `[[45, '45 min'], [60, '60 min']]`
-
-
-> **Matriz**
-> 1. periodo_minimo_estagio_obrigatorio=`[['', '------']] + [[x, x] for x in range(1, 11)]`
-> 2. periodo_minimo_estagio_nao_obrigatorio= `[['', '------']] + [[x, x] for x in range(1, 11)]`
-
-
-> **RotuloModulo**
-> 1. tipo_modulo=`[[1, 'Módulo I'], [2, 'Módulo II'], [3, 'Módulo III'], [4, 'Módulo IV'], [5, 'Módulo V'], [6, 'Módulo VI'], [7, 'Módulo VII'], [8, 'Módulo VIII'], [9, 'Módulo IX'], [10, 'Módulo X'], [11, 'Módulo XI'], [12, 'Módulo XII']]`
-
-
-> **IfrnId**
-> 1. tipo_relacionamento= `['SERVIDOR' 'PRESTADOR' 'ALUNO' 'PESSOA_JURIDICA' 'PESSOA_EXTERNA']`
-
-
+## Choices
 > **Diario**
 > 1. situacao=`[[1, 'Aberto'], [2, 'Fechado']]`
 > 2. posse_etapa_1, posse_etapa_2, posse_etapa_3, posse_etapa_4, posse_etapa_5=`[[1, 'Professor'], [0, 'Registro Escolar']]`
 > 3. etapa=`[[1, 'Etapa 1'], [2, 'Etapa 2'], [3, 'Etapa 3'], [4, 'Etapa 4'], [5, 'Etapa Final']]`
-
-
-> **ItemConfiguracaoAvaliacao**
-> 1. tipo=`[[1, 'Trabalho'], [2, 'Seminário'], [3, 'Teste'], [4, 'Prova'], [5, 'Atividade'],  [6, 'Exercício'], [7, 'Atitudinal']]`
-
-> **ConfiguracaoAvaliacao**
-> 1. tipo=[[1, 'Soma Simples'], [2, 'Média Aritmética'], [3, 'Média Ponderada'], [4, 'Maior Nota'], [5, 'Soma com Divisor Informado'], [6, 'Média Atitudinal'], [7, 'Avaliação por Conceito']]
 
 > **Aula**
 > 1. etapa=`[[1, 'Primeira'], [2, 'Segunda'], [3, 'Terceira'], [4, 'Quarta'], [5, 'Final']]`
 > 2. tipo=`[[1, 'Teórica'], [2, 'Prática'], [3, 'Extensão'], [4, 'Prática como Componente Curricular'], [5, 'Visita Técnica/Aula de Campo']]`
 
 
-
-
 ## Observações
 
 1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
    1. `edu.diarios.ObservacaoDiario`
+   1. `edu.diarios.OcorrenciaDiario`
    1. `edu.diarios.MaterialAula`
    1. `edu.diarios.MaterialDiario`
-   1. `edu.diarios.ConfiguracaoAvaliacao`
-   1. `edu.diarios.ItemConfiguracaoAvaliacao`
-   1. `edu.diarios.NotaAvaliacao`
    1. `edu.diarios.Trabalho`
    1. `edu.diarios.EntregaTrabalho`
    1. `edu.diarios.TopicoDiscussao`
    1. `edu.diarios.RespostaDiscussao`
    1. `edu.diarios.JustificativaSuspensaoDiario`
    1. `edu.diarios.SuspensaoDiario`
-2. Os models abaixo não foram utilizados, mas podem ser utilizados para baixar notas, se houver interesse:
-   1. `edu.diarios.MaterialAula`
-   1. `edu.diarios.MaterialDiario`
-   1. `edu.diarios.ConfiguracaoAvaliacao`
-   1. `edu.diarios.ItemConfiguracaoAvaliacao`
-   1. `edu.diarios.NotaAvaliacao`
-   1. `edu.diarios.Trabalho`
-   1. `edu.diarios.EntregaTrabalho`
-   1. `edu.diarios.TopicoDiscussao`
-   1. `edu.diarios.RespostaDiscussao`
-   1. `edu.diarios.JustificativaSuspensaoDiario`
-   1. `edu.diarios.SuspensaoDiario`
-3. Os models abaixo podem ser usados para envido de mensagens via API:
-   1. ✅ `edu.comunicador.Mensagem`
-   2. ⛔ `edu.comunicador.RegistroLeitura`
-   3. ⛔ `edu.comunicador.RegistroExclusao`
-   4. ⛔ `edu.comunicador.MensagemEntrada`
-   5. ⛔ `edu.comunicador.MensagemSaida`
