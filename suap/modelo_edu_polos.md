@@ -87,9 +87,7 @@ classDiagram
     TutorPolo "n" -- "n" CursoCampus
     CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
-
-    AtividadePolo "n" <-- "1" IfrnId
-    
+  
     HorarioFuncionamentoPolo "1" <-- "n" HorarioPolo
     HorarioFuncionamentoPolo "1" <-- "n" HorarioTutorPolo
     HorarioFuncionamentoPolo "1" <-- "n" HorarioCoordenadorPolo
