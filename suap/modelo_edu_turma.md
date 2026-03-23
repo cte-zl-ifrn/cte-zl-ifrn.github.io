@@ -64,5 +64,5 @@ classDiagram
     TurmaMinicurso "n" --> "1" Turno
     TurmaMinicurso "n" --> "1" Minicurso
 
-    Minicurso --|> Curso
+    Minicurso --|> CursoCampus
 ```
