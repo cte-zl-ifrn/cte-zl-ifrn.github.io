@@ -115,10 +115,10 @@ classDiagram
     Turno "1" --> "n" TurmaMinicurso
 ```
 
-Dada uma matrícula em um diário, é possível identificar o `EixoTecnologico` de 2 formas, qual usar?
+Dada uma matrícula em um diário, é possível identificar o `Turno` de 4 formas, qual usar?
 
 1. `Aluno -> Turno`
-1. `Aluno -> Matricula -> TurmaMiniCurso -> Turno`
-2. `Aluno -> Matricula -> Diario -> Turno`
-3. `Aluno -> Matricula -> Diario -> Turma -> Turno`
+2. `Aluno -> Matricula -> TurmaMiniCurso -> Turno`
+3. `Aluno -> Matricula -> Diario -> Turno`
+4. `Aluno -> Matricula -> Diario -> Turma -> Turno`
 
