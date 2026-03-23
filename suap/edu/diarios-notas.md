@@ -4,9 +4,6 @@
 
 ```mermaid
 classDiagram
-    class IfrnId {
-        _: VerDiagramaIfrnId
-    }
     class Diario{
         _: VerDiagramaDiarios
     }
