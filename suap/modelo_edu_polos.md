@@ -4,6 +4,9 @@
 
 ```mermaid
 classDiagram
+    class IfrnId {
+        _: VerDiagramaIfrnId
+    }
     class Diretoria {
         _: VerDiagramaDiretorias
     }
@@ -41,16 +44,6 @@ classDiagram
         user: User!
         confirmada: Boolean!
     }
-    class IfrnId {
-        _: VerDiagramaIfrnId
-    }
-    class HorarioFuncionamentoPolo {
-        polo: Polo!
-        numero: Integer!
-        turno: Turno!
-        inicio: String!
-        termino: String!
-    }
     class TutorPolo {
         polo: Polo!
         vinculo: Vinculo!
@@ -61,15 +54,22 @@ classDiagram
         dia_semana: Integer!
         horario_funcionamento: HorarioFuncionamentoPolo!
     }
-    class HorarioTutorPolo {
-        tutor: TutorPolo!
-        dia_semana: Integer!
-        horario_funcionamento: HorarioFuncionamentoPolo!
-    }
     class CoordenadorPolo {
         polo: Polo!
         vinculo: Vinculo!
         titular: Boolean!
+    }
+    class HorarioFuncionamentoPolo {
+        polo: Polo!
+        numero: Integer!
+        turno: Turno!
+        inicio: String!
+        termino: String!
+    }
+    class HorarioTutorPolo {
+        tutor: TutorPolo!
+        dia_semana: Integer!
+        horario_funcionamento: HorarioFuncionamentoPolo!
     }
     class HorarioCoordenadorPolo {
         coordenador: CoordenadorPolo!
@@ -80,16 +80,19 @@ classDiagram
     Cidade "1" <-- "n" Polo
     Diretoria "1" <-- "n" Polo
     UnidadeOrganizacional "1" <-- "n" Polo
+
     Polo "1" --> "n" AtividadePolo
+    Polo "1" --> "n" TutorPolo
+    Polo "1" --> "n" HorarioFuncionamentoPolo
+    Polo "1" --> "n" CoordenadorPolo
+    Polo "1" --> "n" HorarioPolo
+
     AtividadePolo "n" <-- "1" Sala
     AtividadePolo "n" <-- "1" IfrnId
-    Polo "1" --> "n" HorarioFuncionamentoPolo
     HorarioFuncionamentoPolo "n" <-- "1" Turno
-    Polo "1" --> "n" TutorPolo
     TutorPolo "n" <-- "1" IfrnId
-    Polo "1" --> "n" HorarioPolo
     HorarioPolo "n" <-- "1" HorarioFuncionamentoPolo
-    Polo "1" --> "n" CoordenadorPolo
+    
     CoordenadorPolo "n" <-- "1" IfrnId
     HorarioCoordenadorPolo "1" --> "n" HorarioCoordenadorPolo
     HorarioCoordenadorPolo "n" <-- "1" HorarioFuncionamentoPolo
