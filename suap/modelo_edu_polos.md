@@ -23,9 +23,11 @@ classDiagram
         _: VerDiagramCadastroGerais
     }
     class Polo {
+        cidade: Cidade
+        diretoria: Diretoria
+        campus_atendimento: UnidadeOrganizacional
         descricao: String!
         sigla: String!
-        cidade: Cidade
         codigo_academico: Integer
         codigo_censup: String!
         estrutura_disponivel: String
@@ -35,10 +37,8 @@ classDiagram
         bairro: String
         cep: String
         do_municipio: Boolean!
-        diretoria: Diretoria
-        telefone_principal: Stringl
+        telefone_principal: String
         telefone_secundario: String
-        campus_atendimento: UnidadeOrganizacional
     }
     class CoordenadorPolo {
         polo: Polo!
