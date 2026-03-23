@@ -90,15 +90,16 @@ classDiagram
     Polo "1" --> "n" HorarioFuncionamentoPolo
     Polo "1" --> "n" HorarioPolo
 
-    AtividadePolo "n" <-- "1" Sala
-    AtividadePolo "n" <-- "1" IfrnId
-    HorarioFuncionamentoPolo "n" <-- "1" Turno
+    CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
+    AtividadePolo "n" <-- "1" IfrnId
+
+    AtividadePolo "n" <-- "1" Sala
+    HorarioFuncionamentoPolo "n" <-- "1" Turno
     HorarioPolo "n" <-- "1" HorarioFuncionamentoPolo
     
-    CoordenadorPolo "n" <-- "1" IfrnId
     HorarioCoordenadorPolo "1" --> "n" HorarioCoordenadorPolo
-    HorarioCoordenadorPolo "n" <-- "1" HorarioFuncionamentoPolo
+    HorarioCoordenadorPolo "1" --> "n" HorarioTutorPolo
 ```
 
 > **HorarioPolo**, **HorarioCoordenadorPolo** e **HorarioTutorPolo**
