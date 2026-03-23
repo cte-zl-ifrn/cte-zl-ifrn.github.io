@@ -56,13 +56,13 @@ classDiagram
     }
 
     Turma "n" --> "1" Turno
-    CursoCampus "n" --> "1" Turma
-    Matriz "n" --> "1" Turma
-    Polo "n" --> "1" Turma
-    Convenio "n" --> "1" Turma
+    Turma  "n" --> "1" CursoCampus
+    Turma "n" --> "1" Matriz
+    Turma "n" --> "1" Polo
+    Turma  "n" --> "1" Convenio
 
-    Minicurso "n" --> "1" TurmaMinicurso
-    Turno "n" --> "1" TurmaMinicurso
+    TurmaMinicurso "n" --> "1" Minicurso
+    TurmaMinicurso "n" --> "1" Turno
 
     Minicurso --|> Curso
 
