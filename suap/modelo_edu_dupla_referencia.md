@@ -80,16 +80,20 @@ classDiagram
     class Aluno {
         nivel_ensino_anterior: NivelEnsino
     }
+    class CursoCampus{
+        modalidade: Modalidade
 
 
+    CursoCampus "n" --> "1" Modalidade
+    
     Modalidade "n" --> "1" NivelEnsino
     Componente "n" --> "1" NivelEnsino
     Matriz "n" --> "1" NivelEnsino
     Aluno "n" --> "1" NivelEnsino
 
     ComponenteCurricular "n" --> "1" Componente
-
     ComponenteCurricular "n" --> "n" Matriz
+
 ```
 
 
