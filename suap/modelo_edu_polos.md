@@ -91,8 +91,8 @@ classDiagram
     Diretoria "1" <-- "n" Polo
     UnidadeOrganizacional "1" <-- "n" Polo
 
-    Polo "1" --> "n" CoordenadorPolo
     Polo "1" --> "n" TutorPolo
+    Polo "1" --> "n" CoordenadorPolo
     Polo "1" --> "n" AtividadePolo
     Polo "1" --> "n" HorarioFuncionamentoPolo
     Polo "1" --> "n" HorarioPolo
