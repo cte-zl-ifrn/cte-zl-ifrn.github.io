@@ -4,6 +4,21 @@
 
 ```mermaid
 classDiagram
+    class Turma{
+        codigo: String!
+        descricao: String!
+        ano_letivo: int!
+        periodo_letivo: int!
+        periodo_matriz: int!
+        turno: Turno
+        curso_campus: CursoCampus
+        matriz: Matriz
+        polo: Polo
+        convenio: Convenio
+        sigla: String
+        codigo_educacenso: String
+    }
+
     class Turno{
         descricao: String!!
         codigo_enade: String
@@ -19,20 +34,6 @@ classDiagram
     }
     class Convenio{
         descricao: String!!
-    }
-    class Turma{
-        codigo: String!
-        descricao: String!
-        ano_letivo: int!
-        periodo_letivo: int!
-        periodo_matriz: int!
-        turno: Turno
-        curso_campus: CursoCampus
-        matriz: Matriz
-        polo: Polo
-        convenio: Convenio
-        sigla: String
-        codigo_educacenso: String
     }
 
     class Minicurso {
