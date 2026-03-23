@@ -19,7 +19,7 @@ Este é o **ecossistema** de aplicações que integram os Ambientes Virtuais de 
 5. [**AVA IFRN Mobile**](https://github.com/cte-zl-ifrn/moodle-app) (IFRN): Aplicativo Móvel para Android e iOS que faz interface para o AVA, Painel AVA e SUAP SSO em arquitetura móvel baseada em Ionic. Protocolos suportados: `Native Moodle Web Service`, `JSON RESTful`, `JWT` e `SGA`. Em construção.
 
 
-## Instância AVA
+## Instâncias AVA
 
 O IFRN oferece 5 instâncias:
 
