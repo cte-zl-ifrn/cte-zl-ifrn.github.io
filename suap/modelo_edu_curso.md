@@ -209,50 +209,6 @@ classDiagram
     Minicurso --|> Curso
 
     ConteudoMinicurso --> Minicurso
-
-    Turma --> Turno
-    Turma --> CursoCampus
-    Turma --> Convenio
-    Turma --> Matriz
-
-    TurmaMinicurso --> Turno
-    TurmaMinicurso --> Minicurso
-
-    ParticipanteTurmaMinicurso --> Aluno
-    ParticipanteTurmaMinicurso --> TurmaMinicurso
-
-    MonitorMinicurso --> Aluno
-    MonitorMinicurso --> TurmaMinicurso
-
-    ProfessorMinicurso --> IfrnId
-    ProfessorMinicurso --> TurmaMinicurso
-
-    Diario --> Turma
-    Diario --> ComponenteCurricular
-    Diario --> HorarioCampus
-    Diario --> Turno
-    Diario --> EstruturaCurso
-    Diario --> CalendarioAcademico
-    Diario --> Sala
-
-    ProfessorDiario --> Diario
-    ProfessorDiario --> Professor
-    ProfessorDiario --> TipoProfessorDiario
-
-    NotaAvaliacao --> MatriculaDiario
-    NotaAvaliacao --> ItemConfiguracaoAvaliacao
-
-    ItemConfiguracaoAvaliacao --> ConfiguracaoAvaliacao
-
-    ConfiguracaoAvaliacao --> Diario
-
-    Falta --> MatriculaDiario
-    Falta --> Aula
-    Falta --> AbonoFaltas
-
-    Aula --> ProfessorDiario
-    Aula --> ProfessorDiario
-
 ```
 
 
