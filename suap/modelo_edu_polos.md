@@ -54,8 +54,6 @@ classDiagram
 
     Polo "1" --> "n" TutorPolo
     Polo "1" --> "n" CoordenadorPolo
-    Polo "1" --> "n" HorarioFuncionamentoPolo
-    Polo "1" --> "n" HorarioPolo
 
     TutorPolo "n" -- "n" CursoCampus
     CoordenadorPolo "n" <-- "1" IfrnId
