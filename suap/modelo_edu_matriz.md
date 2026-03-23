@@ -92,8 +92,6 @@ classDiagram
     Matriz "n" --> "1" NivelEnsino
     Matriz "n" --> "1" NaturezaParticipacao
 
-    Matriz "n" --> "n" Curso
-
     MatrizCurso "n" --> "1" Curso
     MatrizCurso  "n" --> "1" Matriz
 
