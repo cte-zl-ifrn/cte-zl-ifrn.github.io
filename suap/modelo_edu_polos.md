@@ -19,9 +19,6 @@ classDiagram
     class Cidade {
         _: VerDiagramCadastroGerais
     }
-    class Sala {
-        _: VerDiagramCadastroGerais
-    }
     class Polo {
         cidade: Cidade
         diretoria: Diretoria
@@ -49,16 +46,6 @@ classDiagram
         polo: Polo!
         vinculo: Vinculo!
         titular: Boolean!
-    }
-    class AtividadePolo {
-        polo: Polo!
-        user: User!
-        nome: String
-        descricao: String
-        sala: Sala
-        data_inicio: DateTime!
-        data_fim: DateTime!
-        confirmada: Boolean!
     }
     class Turno {
         descricao: String!!
@@ -102,7 +89,6 @@ classDiagram
     TutorPolo "n" <-- "1" IfrnId
 
     AtividadePolo "n" <-- "1" IfrnId
-    AtividadePolo "n" <-- "1" Sala
     
     HorarioFuncionamentoPolo "1" <-- "n" HorarioPolo
     HorarioFuncionamentoPolo "1" <-- "n" HorarioTutorPolo
@@ -115,3 +101,9 @@ classDiagram
 
 > **HorarioFuncionamentoPolo**
 > 1. numero=`[[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5'], [6, '6']]`
+
+
+## Observações
+
+1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
+   1. `edu.polos.AtividadePolo`
