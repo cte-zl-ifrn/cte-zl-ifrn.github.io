@@ -52,12 +52,12 @@ classDiagram
     }
     class AtividadePolo {
         polo: Polo!
+        user: User!
         nome: String
         descricao: String
         sala: Sala
         data_inicio: DateTime!
         data_fim: DateTime!
-        user: User!
         confirmada: Boolean!
     }
     class HorarioPolo {
