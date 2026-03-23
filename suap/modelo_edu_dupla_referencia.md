@@ -58,10 +58,6 @@ classDiagram
         modalidade: Modalidade
     }
 
-    CursoCampus "n" --> "1" Modalidade
-    
-    Modalidade "n" --> "1" NivelEnsino
-
     Componente "n" --> "1" NivelEnsino
     Componente "n" --> "1" GrupoAtuacao
 
@@ -74,6 +70,10 @@ classDiagram
 
     MatrizCurso "n" --> "1" CursoCampus
     MatrizCurso "n" --> "1" Matriz
+
+    CursoCampus "n" --> "1" Modalidade
+    
+    Modalidade "n" --> "1" NivelEnsino
 ```
 
 
