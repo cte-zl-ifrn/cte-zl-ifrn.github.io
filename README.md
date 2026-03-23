@@ -22,11 +22,11 @@ Este é o **ecossistema** de aplicações que integram os Ambientes Virtuais de 
 
 O IFRN oferece 5 instâncias:
 
-        1. **[Acadêmico](https://academico.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos com diário no SUAP do Campus Natal-Zona Leste (ZL). Versão 4.5.x. Hospedado em nuvem pela RNP.
-        2. **[Presencial](https://presencial.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos com diário no SUAP de todos que não seja do Campus ZL. Versão 4.5.x. Hospedado em nuvem pela RNP.
-        3. **[Aberto](https://aberto.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos aberto, ou seja, curso massivo online aberto (Massive Open Online Course - MOOC). Versão 4.5.x. Hospedado no datacenter do IFRN.
-        4. **[Projetos](https://projetos.ava.ifrn.edu.br/)**: Se o curso não tem diário e não é aberto é um projeto, simples assim. Versão 4.5.x. Hospedado em nuvem pela RNP.
-        5. **[Arquivo](https://ead.ava.ifrn.edu.br/)**: Os AVA Acadêmico com diários até 2022 foi arquivado. Hospedado no datacenter do ZL. Ativado sob demanda. Backup dos cursos disponível em nuvem (sob demanda, em breve online).
+1. **[Acadêmico](https://academico.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos com diário no SUAP do Campus Natal-Zona Leste (ZL). Versão 4.5.x. Hospedado em nuvem pela RNP.
+2. **[Presencial](https://presencial.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos com diário no SUAP de todos que não seja do Campus ZL. Versão 4.5.x. Hospedado em nuvem pela RNP.
+3. **[Aberto](https://aberto.ava.ifrn.edu.br/)**: Sustenta o serviço AVA para os cursos aberto, ou seja, curso massivo online aberto (Massive Open Online Course - MOOC). Versão 4.5.x. Hospedado no datacenter do IFRN.
+4. **[Projetos](https://projetos.ava.ifrn.edu.br/)**: Se o curso não tem diário e não é aberto é um projeto, simples assim. Versão 4.5.x. Hospedado em nuvem pela RNP.
+5. **[Arquivo](https://ead.ava.ifrn.edu.br/)**: Os AVA Acadêmico com diários até 2022 foi arquivado. Hospedado no datacenter do ZL. Ativado sob demanda. Backup dos cursos disponível em nuvem (sob demanda, em breve online).
 
 
 ## Sobre o Integrador AVA
