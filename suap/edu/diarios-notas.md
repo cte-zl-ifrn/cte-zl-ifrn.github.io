@@ -34,10 +34,10 @@ classDiagram
         item_configuracao_avaliacao: ItemConfiguracaoAvaliacao!
         nota: Nota
     }
+    MatriculaDiario "1" <-- "n" NotaAvaliacao 
     Diario "1" <-- "n" ConfiguracaoAvaliacao
     ConfiguracaoAvaliacao "1" <-- "n" ItemConfiguracaoAvaliacao
     ItemConfiguracaoAvaliacao "1" <-- "n" NotaAvaliacao
-    NotaAvaliacao "n" --> "1" MatriculaDiario
 ```
 
 
