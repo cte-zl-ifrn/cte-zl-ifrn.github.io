@@ -37,6 +37,16 @@ classDiagram
         telefone_secundario: String
         campus_atendimento: UnidadeOrganizacional
     }
+    class CoordenadorPolo {
+        polo: Polo!
+        vinculo: Vinculo!
+        titular: Boolean!
+    }
+    class TutorPolo {
+        polo: Polo!
+        vinculo: Vinculo!
+        cursos: set[CursoCampus]
+    }
     class AtividadePolo {
         polo: Polo!
         nome: String
@@ -47,20 +57,10 @@ classDiagram
         user: User!
         confirmada: Boolean!
     }
-    class TutorPolo {
-        polo: Polo!
-        vinculo: Vinculo!
-        cursos: set[CursoCampus]
-    }
     class HorarioPolo {
         polo: Polo!
         dia_semana: Integer!
         horario_funcionamento: HorarioFuncionamentoPolo!
-    }
-    class CoordenadorPolo {
-        polo: Polo!
-        vinculo: Vinculo!
-        titular: Boolean!
     }
     class HorarioFuncionamentoPolo {
         polo: Polo!
@@ -84,8 +84,8 @@ classDiagram
     Diretoria "1" <-- "n" Polo
     UnidadeOrganizacional "1" <-- "n" Polo
 
-    Polo "1" --> "n" TutorPolo
     Polo "1" --> "n" CoordenadorPolo
+    Polo "1" --> "n" TutorPolo
     Polo "1" --> "n" AtividadePolo
     Polo "1" --> "n" HorarioFuncionamentoPolo
     Polo "1" --> "n" HorarioPolo
