@@ -1,6 +1,6 @@
 # SUAP Edu
 
-## Curso - Digrama
+## Turma - Digrama
 
 ```mermaid
 classDiagram
@@ -17,26 +17,6 @@ classDiagram
         convenio: Convenio
         sigla: String
         codigo_educacenso: String
-    }
-
-    class Turno{
-        descricao: String!!
-        codigo_enade: String
-    }
-    class CursoCampus {
-        _: VerDiagramaCurso
-    }
-    class Matriz {
-        _: VerDiagramaMatriz
-    }
-    class Polo {
-        _: VerDiagramaPolo
-    }
-    class Convenio{
-        descricao: String!!
-    }
-
-    class Minicurso {
     }
     class TurmaMinicurso{
         descricao: String!
@@ -55,17 +35,60 @@ classDiagram
         url_ambiente_virtual: String
     }
 
+    class Turno {
+        descricao: String!!
+        codigo_enade: String
+    }
+    class CursoCampus {
+        _: VerDiagramaCurso
+    }
+    class Matriz {
+        _: VerDiagramaMatriz
+    }
+    class Polo {
+        _: VerDiagramaPolo
+    }
+    class Convenio{
+        descricao: String!!
+    }
+    class Minicurso {
+    }
+    class ParticipanteTurmaMinicurso {
+        aluno: Aluno!
+        turma: TurmaMinicurso!
+        nota: Integer
+        completude: Integer
+    }
+    class MonitorMinicurso {
+        aluno: Aluno!
+        turma_minicurso: TurmaMinicurso!
+        carga_horaria: Integer
+    }
+    class ProfessorMinicurso {
+        professor: Professor!
+        turma_minicurso: TurmaMinicurso!
+        carga_horaria: Integer
+        carga_horaria_semanal: Decimal
+    }
+    class IfrnId {
+        _: VerDiagramaIfrnId
+    }
+
     Turma "n" --> "1" Polo
     Turma  "n" --> "1" Convenio
     Turma  "n" --> "1" CursoCampus
     Turma "n" --> "1" Matriz
     Turma "n" --> "1" Turno
 
-    CursoCampus <|-- Minicurso
-    CursoCampus "n" <-- "n "Matriz
-
     TurmaMinicurso "n" --> "1" Turno
     TurmaMinicurso "n" --> "1" Minicurso
+    TurmaMinicurso "1" <-- "n" ParticipanteTurmaMinicurso
+    ParticipanteTurmaMinicurso "n" <-- "1" IfrnId: aluno
+    TurmaMinicurso "1" <-- "n" MonitorMinicurso
+    MonitorMinicurso "n" <-- "1" IfrnId : aluno
+    TurmaMinicurso "1" <-- "n" ProfessorMinicurso
+    ProfessorMinicurso "1" <-- "n" IfrnId : professor
 
-
+    CursoCampus <|-- Minicurso
+    CursoCampus "n" <-- "n "Matriz
 ```
