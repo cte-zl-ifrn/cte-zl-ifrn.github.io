@@ -82,7 +82,7 @@ classDiagram
     }
     class CursoCampus{
         modalidade: Modalidade
-
+    }
 
     CursoCampus "n" --> "1" Modalidade
     
@@ -93,7 +93,6 @@ classDiagram
 
     ComponenteCurricular "n" --> "1" Componente
     ComponenteCurricular "n" --> "n" Matriz
-
 ```
 
 
