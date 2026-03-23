@@ -71,7 +71,6 @@ classDiagram
 
     ComponenteCurricular "n" --> "1" Componente
     ComponenteCurricular "n" --> "n" Matriz
-    ComponenteCurricular "n" --> "1" Componente
 
     MatrizCurso "n" --> "1" CursoCampus
     MatrizCurso "n" --> "1" Matriz
