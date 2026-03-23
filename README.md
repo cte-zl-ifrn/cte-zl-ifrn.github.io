@@ -144,7 +144,3 @@ Estes diagramas foram construídos usando o https://app.diagrams.net/ e podem se
 * **DEAD** - [Diretoria de Educação a Distância](https://ead.ifrn.edu.br/Painel/institucional/estrutura-administrativa/dg/dead/)
    - Coordena, desenvolve e suporta ações de EAD no IFRN, integrando presencial e EAD.
    - Atua na produção de conteúdos e no suporte tecnológico.
-
-
-# Status
-> Para acompanhar o [status dos serviços](https://github.com/cte-zl-ifrn/.github/blob/main/profile/status.md)
