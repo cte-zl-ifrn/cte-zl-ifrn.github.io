@@ -203,12 +203,12 @@ classDiagram
     Matriz --> NivelEnsino
     Matriz --> Componente
     
-    MatrizCurso --> Curso
+    MatrizCurso --> CursoCampus
     MatrizCurso --> Matriz
 
     RotuloModulo --> Matriz
 
-    Minicurso --|> Curso
+    Minicurso --|> CursoCampus
 
     ConteudoMinicurso --> Minicurso
 ```
