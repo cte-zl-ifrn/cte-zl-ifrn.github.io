@@ -47,10 +47,6 @@ classDiagram
         vinculo: Vinculo!
         titular: Boolean!
     }
-    class Turno {
-        descricao: String!!
-        codigo_enade: String
-    }
 
     Cidade "1" <-- "n" Polo
     Diretoria "1" <-- "n" Polo
