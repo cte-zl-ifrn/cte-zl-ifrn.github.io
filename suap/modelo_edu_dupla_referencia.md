@@ -12,37 +12,9 @@ classDiagram
         codigo_inep: String
     }
     class CursoTecnico{
-        codigo_inep: String!!
-        nome: String!!
+        ...
         eixo_tecnologico: EixoTecnologico!
-        excluido: Boolean!
-    }
-    class AreaCapes {
-        descricao: String!!
-    }
-    class AreaCursoFormacaoSuperior {
-        codigo_cine: String!
-        codigo_area_detalhada: String!
-        codigo_area_especifica: String!
-        codigo_area_geral: String!
-
-        cine: String
-        area_detalhada: String!
-        area_especifica: String!
-        area_geral: String!
-    }
-
-    class JustificativaDispensaENADE{
-        descricao: String!!
-        ativo: Boolean!
-    }
-    class AreaConcentracao{
-        descricao: String!!
-        area_capes: AreaCapes
-        area_avaliacao: AreaAvaliacao
-    }
-    class Diretoria{
-        _: VerDiagramaDiretoria
+        ...
     }
     class CursoCampus{
         ...
@@ -52,6 +24,8 @@ classDiagram
     }
 
     CursoTecnico "n" --> "1" EixoTecnologico
+    CursoCampus "n" --> "1" EixoTecnologico
+    CursoCampus "n" --> "1" CursoTecnico
 ```
 
 
@@ -103,28 +77,10 @@ classDiagram
     ComponenteCurricular "n" --> "1" Matriz
 
     CursoCampus "n" --> "1" Modalidade
-    CursoCampus "n" --> "1" AreaCurso
-    CursoCampus "n" --> "1" AreaCapes
-    CursoCampus "n" --> "1" EixoTecnologico
-    CursoCampus "n" --> "1" CursoTecnico
-    CursoCampus "n" --> "1" IfrnId : coordenador
-    CursoCampus "n" --> "1" IfrnId : coordenador_2
-    CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
-    CursoCampus "n" --> "1" AreaConcentracao
-    CursoCampus "n" --> "1" Diretoria
-    CursoCampus "n" --> "1" AreaCursoFormacaoSuperior
-    CursoCampus "n" --> "1" JustificativaDispensaEnade
 
-    CursoTecnico "n" --> "1" EixoTecnologico
-
-    Matriz "n" --> "1" NivelEnsino
-    
+  
     MatrizCurso "n" --> "1" CursoCampus
     MatrizCurso "n" --> "1" Matriz
-
-    Minicurso --|> CursoCampus
-
-    ConteudoMinicurso "n" --> "1" Minicurso    
 ```
 
 
