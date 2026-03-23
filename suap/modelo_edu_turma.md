@@ -65,5 +65,4 @@ classDiagram
     TurmaMinicurso "n" --> "1" Turno
 
     Minicurso --|> Curso
-
 ```
