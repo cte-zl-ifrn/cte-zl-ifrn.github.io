@@ -115,10 +115,13 @@ classDiagram
     Turno "1" --> "n" TurmaMinicurso
 ```
 
-Dada uma matrícula em um diário, é possível identificar o `Turno` de 4 formas, qual usar?
+Dada uma matrícula em um diário, é possível identificar o `Turno` de 2 ou 3 formas, qual usar?
 
+**Curso**
+1. `Aluno -> Turno`
+2. `Aluno -> Matricula -> Diario -> Turno`
+3. `Aluno -> Matricula -> Diario -> Turma -> Turno`
+
+**MiniCurso**
 1. `Aluno -> Turno`
 2. `Aluno -> Matricula -> TurmaMiniCurso -> Turno`
-3. `Aluno -> Matricula -> Diario -> Turno`
-4. `Aluno -> Matricula -> Diario -> Turma -> Turno`
-
