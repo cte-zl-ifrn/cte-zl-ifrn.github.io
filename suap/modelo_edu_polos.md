@@ -4,6 +4,15 @@
 
 ```mermaid
 classDiagram
+    class Diretoria {
+        _: VerDiagramaDiretorias
+    }
+    class Cidade {
+        _: VerDiagramaCidade
+    }
+    class UnidadeOrganizacional {
+        _: VerDiagramaRh
+    }
     class Polo {
         descricao: String!
         sigla: String!
