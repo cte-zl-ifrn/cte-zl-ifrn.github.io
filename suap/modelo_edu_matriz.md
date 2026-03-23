@@ -59,9 +59,6 @@ classDiagram
         emite_certificacao_parcial: Boolean!
         certificado_parcial_acumulavel: Boolean!
     }
-    class CursoTecnico{
-        _: VerDiagramaCurso
-    }
     class CursoCampus{
         _: VerDiagramaCurso
     }
