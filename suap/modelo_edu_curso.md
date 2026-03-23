@@ -198,6 +198,8 @@ classDiagram
     CursoCampus --> CursoTecnico
     CursoCampus --> IfrnId
 
+    CursoCampus "n" --> "1" Diretoria
+
     Matriz --> NivelEnsino
     Matriz --> Componente
     
