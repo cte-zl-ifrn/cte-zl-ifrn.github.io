@@ -84,6 +84,7 @@ classDiagram
     }
     class Turma {
         _: VerDiagramaTurma
+        matriz: Matriz!
     }
 
     Matriz "n" --> "1" NivelEnsino
