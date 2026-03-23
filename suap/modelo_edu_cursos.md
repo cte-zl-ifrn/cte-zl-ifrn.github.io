@@ -1,6 +1,114 @@
-# SUAP Edu - Cursos
+# SUAP Edu
 
-## Digrama
+## Componente - Digrama
+
+```mermaid
+classDiagram
+    class NivelEnsino {
+        descricao: String!!
+    }
+    class TipoComponente{
+        descricao: String!
+    }
+    class GrupoAtuacao{
+        descricao: String!        
+    }
+    class Componente {
+        descricao: String!
+        descricao_historico: String!
+        tipo: TipoComponente!
+        sigla: String!!
+        nivel_ensino: NivelEnsino!
+        ativo: Boolean!
+
+        ch_hora_relogio: Integer!
+        ch_hora_aula: Integer!
+        ch_qtd_creditos: Integer!
+
+        observacao: Text
+        sigla_qacademico: String
+        abreviatura: String
+
+        grupo_atuacao: GrupoAtuacao
+
+        sequencial: Integer
+    }
+    class ClassificacaoComplementarComponenteCurricular {
+        descricao: String!!
+    }
+    class Nucleo{
+        descricao: String!!
+    }
+    class ComponenteCurricular {
+        %% Dados gerais
+        matriz: Matriz!
+        componente: Componente!
+        classificacao_complementar: ClassificacaoComplementarComponenteCurricular
+        periodo_letivo: Integer!
+        tipo: IntegerChoice
+        optativo: Boolean!
+        is_seminario_estagio_docente: Boolean!
+        tipo_estagio_docente: IntegerChoice
+        tipo_modulo: IntegerChoice
+        qtd_avaliacoes: IntegerChoice
+        nucleo: Nucleo!
+
+        %% Carga horária
+        ch_presencial: Integer!
+        ch_pratica: Integer!
+        ch_extensao: Integer!
+        ch_pcc: Integer!
+        ch_visita_tecnica: Integer!
+        percentual_maximo_ead: Integer!
+        qtd_aulas_ead: Integer!
+
+        %% Pré requisitos
+        pre_requisitos: Many(ComponenteCurricular)
+
+        %% Co-requisitos
+        co_requisitos: Many(ComponenteCurricular)
+
+        avaliacao_por_conceito: Boolean!
+        is_dinamico: Boolean!
+        componente_curricular_associado: ComponenteCurricular
+        segundo_semestre: Boolean!
+        pode_fechar_pendencia: Boolean!
+        ementa: Text
+
+        %% distribuição da quantidade de créditos do componente curricular anual no semestre
+        ch_semanal_1s: Integer
+        ch_semanal_2s: Integer
+    }
+
+
+    class Matriz{
+        _: VerDiagramaMatriz
+    }
+
+    class Diario{
+        _: VerDiagramaDiario
+    }
+
+    Componente "N" --> "1" TipoComponente
+    Componente "N" --> "1" NivelEnsino
+    Componente "N" --> "1" GrupoAtuacao
+
+    ComponenteCurricular "N" --> "1" Matriz
+    ComponenteCurricular "N" --> "1" Componente
+    ComponenteCurricular "N" --> "1" ClassificacaoComplementarComponenteCurricular
+    ComponenteCurricular "N" --> "1" Nucleo
+
+    Diario "N" --> "1" ComponenteCurricular
+```
+
+> **ComponenteCurricular**
+> 1. tipo = `[[1, 'Regular'], [2, 'Seminário'], [3, 'Prática Profissional'], [4, 'Trabalho de Conclusão de Curso'], [5, 'Atividade de Extensão'], [6, 'Prática como Componente Curricular'], [7, 'Visita Técnica / Aula da Campo'], [8, 'Componentes Extracurriculares']]`
+> 2. tipo_estagio_docente = `[[1, 'Estágio Docente I'], [2, 'Estágio Docente II'], [3, 'Estágio Docente III'], [4, 'Estágio Docente IV'], [5, 'Estágio Docente de Matriz Anterior']]`
+> 3. tipo_modulo = `[[1, 'Módulo I'], [2, 'Módulo II'], [3, 'Módulo III'], [4, 'Módulo IV'], [5, 'Módulo V'], [6, 'Módulo VI'], [7, 'Módulo VII'], [8, 'Módulo VIII'], [9, 'Módulo IX'], [10, 'Módulo X'], [11, 'Módulo XI'], [12, 'Módulo XII']]`
+> 4. qtd_avaliacoes = `[[0, 'Zero'], [1, 'Uma'], [2, 'Duas'], [3, 'Três'], [4, 'Quatro']]`
+
+
+## Curso - Digrama
 
 ```mermaid
 classDiagram
@@ -66,6 +174,61 @@ classDiagram
     }
     class ClassificacaoComplementarComponenteCurricular {
         descricao: String!!
+    }
+    class Matriz {
+        %% Dados gerais
+        descricao: String
+        ano_criacao: Integer
+        periodo_criacao: Integer [[1, '1'], [2, '2']]
+        ativo: Boolean
+        data_inicio: Date
+        data_fim: Date 
+        ppp: File 
+        ppc: File 
+        qtd_periodos_letivos: Integer [[x, x] for x in range(1, 13)])
+        nivel_ensino: NivelEnsino 
+        natureza_participacao: NaturezaParticipacao 
+
+        %% Carga horária
+        ch_componentes_obrigatorios: Integer
+        ch_componentes_optativos: Integer
+        ch_componentes_eletivos: Integer
+        ch_seminarios: Integer
+        ch_pratica_profissional: Integer
+        ch_atividades_complementares: Integer
+        ch_atividades_aprofundamento: Integer
+        ch_componentes_extensao: Integer
+        ch_componentes_tcc: Integer
+        ch_pratica_como_componente: Integer
+        ch_visita_tecnica: Integer
+        ch_atividades_extensao: Integer
+        ch_componentes_com_extensao: Integer
+
+        componentes: Many[Componente(ComponenteCurricular)]
+
+        inconsistente: Boolean
+        exige_tcc: Boolean
+        permite_etapas_componente_tcc: Boolean
+
+        observacao: Text 
+
+        %% Estágio
+        exige_estagio: Boolean 
+        ch_minima_estagio: Integer 
+        periodo_minimo_estagio_obrigatorio: IntegerChoice
+        periodo_minimo_estagio_nao_obrigatorio: IntegerChoice
+
+        requer_vinculacao_extensao_diarios: Boolean!
+
+        %% certificação parcial
+        emite_certificacao_parcial: Boolean!
+        certificado_parcial_acumulavel: Boolean!
+    }
+    class CursoTecnico{
+        codigo_inep: String!!
+        nome: String!!
+        eixo_tecnologico: EixoTecnologico!
+        excluido: Boolean!
     }
     class CursoCampus{
         %% Identificação
@@ -138,7 +301,7 @@ classDiagram
         titulo_certificado_feminino: String
 
         %% Atributo de Minicurso
-        ppc: File Optional
+        ppc: File 
         ch_total: Integer
         ch_aula: Integer
         tipo_hora_aula: StringChoice
@@ -150,55 +313,7 @@ classDiagram
         autoinstrucional: Boolean
 
     }
-    class Matriz {
-        %% Dados gerais
-        descricao: String
-        ano_criacao: Integer
-        periodo_criacao: Integer [[1, '1'], [2, '2']]
-        ativo: Boolean
-        data_inicio: Date
-        data_fim: Date Optional
-        ppp: File Optional
-        ppc: File Optional
-        qtd_periodos_letivos: Integer [[x, x] for x in range(1, 13)])
-        nivel_ensino: NivelEnsino Optional
-        natureza_participacao: NaturezaParticipacao Optional
 
-        %% Carga horária
-        ch_componentes_obrigatorios: Integer
-        ch_componentes_optativos: Integer
-        ch_componentes_eletivos: Integer
-        ch_seminarios: Integer
-        ch_pratica_profissional: Integer
-        ch_atividades_complementares: Integer
-        ch_atividades_aprofundamento: Integer
-        ch_componentes_extensao: Integer
-        ch_componentes_tcc: Integer
-        ch_pratica_como_componente: Integer
-        ch_visita_tecnica: Integer
-        ch_atividades_extensao: Integer
-        ch_componentes_com_extensao: Integer
-
-        componentes: Many[Componente(ComponenteCurricular)]
-
-        inconsistente: Boolean
-        exige_tcc: Boolean
-        permite_etapas_componente_tcc: Boolean
-
-        observacao: Text Optional
-
-        %% Estágio
-        exige_estagio: Boolean Optional
-        ch_minima_estagio: Integer Optional
-        periodo_minimo_estagio_obrigatorio: IntegerChoice
-        periodo_minimo_estagio_nao_obrigatorio: IntegerChoice
-
-        requer_vinculacao_extensao_diarios: Boolean!
-
-        %% certificação parcial
-        emite_certificacao_parcial: Boolean!
-        certificado_parcial_acumulavel: Boolean!
-    }
     class MatrizCurso {
         curso_campus: CursoCampus!
         matriz: Matriz!
@@ -239,12 +354,6 @@ classDiagram
     class NivelEnsino {
         descricao: String!!
     }
-    class CursoTecnico{
-        codigo_inep: String!!
-        nome: String!!
-        eixo_tecnologico: EixoTecnologico!
-        excluido: Boolean!
-    }
     class IfrnId {
         tipo_relacionamento: IntegerChoice
         ativo: Boolean!
@@ -269,9 +378,6 @@ classDiagram
     }
     class TipoComponente{
         descricao: String!
-    }
-    class GrupoAtuacao{
-        descricao: String!        
     }
     class NaturezaParticipacao {
         descricao: String!!
@@ -429,7 +535,6 @@ classDiagram
         contabilizar: Boolean!
     }
 
-
     Componente --> TipoComponente
     Componente --> NivelEnsino
     Componente --> GrupoAtuacao
@@ -546,4 +651,9 @@ classDiagram
 > **Aula**
 > 1. etapa=`[[1, 'Primeira'], [2, 'Segunda'], [3, 'Terceira'], [4, 'Quarta'], [5, 'Final']]`
 > 2. tipo=`[[1, 'Teórica'], [2, 'Prática'], [3, 'Extensão'], [4, 'Prática como Componente Curricular'], [5, 'Visita Técnica/Aula de Campo']]`
+
+
+
+
+
 
