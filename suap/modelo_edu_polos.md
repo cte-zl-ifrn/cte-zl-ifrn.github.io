@@ -7,14 +7,17 @@ classDiagram
     class IfrnId {
         _: VerDiagramaIfrnId
     }
-    class Diretoria {
-        _: VerDiagramaDiretorias
-    }
-    class Cidade {
-        _: VerDiagramaCidade
-    }
     class UnidadeOrganizacional {
         _: VerDiagramaRh
+    }
+    class Diretoria {
+        _: VerDiagramCadastroGerais
+    }
+    class Cidade {
+        _: VerDiagramCadastroGerais
+    }
+    class Sala {
+        _: VerDiagramCadastroGerais
     }
     class Polo {
         descricao: String!
