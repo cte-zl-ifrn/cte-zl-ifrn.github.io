@@ -33,10 +33,6 @@ classDiagram
         descricao: String!!
         nivel_ensino: NivelEnsino
     }
-    class EixoTecnologico {
-        descricao: String!!
-        codigo_inep: String
-    }
     class AreaCapes {
         descricao: String!!
     }
