@@ -16,6 +16,9 @@ classDiagram
     class Cidade {
         _: VerDiagramCadastroGerais
     }
+    class CursoCampus {
+        _: VerDiagramaCursso
+    }
     class Sala {
         _: VerDiagramCadastroGerais
     }
@@ -92,6 +95,7 @@ classDiagram
 
     CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
+    TutorPolo "n" -- "n" IfrnId
     AtividadePolo "n" <-- "1" IfrnId
 
     AtividadePolo "n" <-- "1" Sala
