@@ -62,8 +62,10 @@ classDiagram
     Turma "n" --> "1" Turno
 
     CursoCampus <|-- Minicurso
+    CursoCampus "n" <|-- "n "Matriz
 
     TurmaMinicurso "n" --> "1" Turno
     TurmaMinicurso "n" --> "1" Minicurso
+
 
 ```

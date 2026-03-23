@@ -123,7 +123,7 @@ classDiagram
         numero_portaria_coordenador: String
         coordenador_2: IfrnId
         numero_portaria_coordenador_2: String
-        matrizes: "1" --> "0..*" Matriz
+        matrizes: set[Matriz]
         mesmo_curso: CursoCampus
 
         %% Titulo do certificado de conclusão
