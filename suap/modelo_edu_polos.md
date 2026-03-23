@@ -1,6 +1,6 @@
 # SUAP Edu
 
-## Curso - Digrama
+## Polos - Digrama
 
 ```mermaid
 classDiagram
@@ -36,6 +36,46 @@ classDiagram
         do_municipio: Boolean!
         telefone_principal: String
         telefone_secundario: String
+    }
+    class TutorPolo {
+        polo: Polo!
+        vinculo: Vinculo!
+        cursos: set[CursoCampus]
+    }
+    class CoordenadorPolo {
+        polo: Polo!
+        vinculo: Vinculo!
+        titular: Boolean!
+    }
+    class Turno {
+        descricao: String!!
+        codigo_enade: String
+    }
+
+    Cidade "1" <-- "n" Polo
+    Diretoria "1" <-- "n" Polo
+    UnidadeOrganizacional "1" <-- "n" Polo
+
+    Polo "1" --> "n" TutorPolo
+    Polo "1" --> "n" CoordenadorPolo
+    Polo "1" --> "n" HorarioFuncionamentoPolo
+    Polo "1" --> "n" HorarioPolo
+
+    TutorPolo "n" -- "n" CursoCampus
+    CoordenadorPolo "n" <-- "1" IfrnId
+    TutorPolo "n" <-- "1" IfrnId
+```
+
+
+## Horários dos polos - Digrama
+
+```mermaid
+classDiagram
+    class IfrnId {
+        _: VerDiagramaIfrnId
+    }
+    class Polo {
+        _: VerDiagrama acima
     }
     class TutorPolo {
         polo: Polo!
@@ -93,6 +133,7 @@ classDiagram
     HorarioFuncionamentoPolo "n" <-- "1" Turno
 ```
 
+
 > **HorarioPolo**, **HorarioCoordenadorPolo** e **HorarioTutorPolo**
 > 1. dia_semana=`[[1, 'Segunda'], [2, 'Terça'], [3, 'Quarta'], [4, 'Quinta'], [5, 'Sexta'], [6, 'Sábado'], [7, 'Domingo']]`
 
@@ -104,3 +145,9 @@ classDiagram
 
 1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
    1. `edu.polos.AtividadePolo`
+
+1. Os models abaixo podem ser úteis para dar transparência dos horários do coordenadores e tutores no polos, útil para os alunos:
+   1. `edu.polos.HorarioFuncionamentoPolo`
+   1. `edu.polos.HorarioPolo`
+   1. `edu.polos.HorarioTutorPolo`
+   1. `edu.cadastros_gerais.Turno`
