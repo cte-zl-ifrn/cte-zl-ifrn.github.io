@@ -63,7 +63,7 @@ classDiagram
 
     CursoCampus <|-- Minicurso
 
-    TurmaMinicurso "n" --> "1" Minicurso
     TurmaMinicurso "n" --> "1" Turno
+    TurmaMinicurso "n" --> "1" Minicurso
 
 ```
