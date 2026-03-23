@@ -62,13 +62,13 @@ classDiagram
     }
     class HorarioPolo {
         polo: Polo!
-        dia_semana: Integer!
         horario_funcionamento: HorarioFuncionamentoPolo!
+        dia_semana: Integer!
     }
     class HorarioFuncionamentoPolo {
         polo: Polo!
-        numero: Integer!
         turno: Turno!
+        numero: Integer!
         inicio: String!
         termino: String!
     }
@@ -103,7 +103,6 @@ classDiagram
     HorarioPolo "n" <-- "1" HorarioFuncionamentoPolo
     
     HorarioCoordenadorPolo "1" --> "n" HorarioCoordenadorPolo
-    HorarioCoordenadorPolo "1" --> "n" HorarioTutorPolo
 ```
 
 > **HorarioPolo**, **HorarioCoordenadorPolo** e **HorarioTutorPolo**
