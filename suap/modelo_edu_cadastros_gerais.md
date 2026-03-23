@@ -5,7 +5,7 @@
 
 # Observações
 
-O modelos abaixo não não foram utilizados pois não pareceram serem de interesse da integração.
+O modelos abaixo não foram utilizados pois não pareceram serem de interesse da integração.
 
 1. `Cartorio`
 2. `Cidade`
