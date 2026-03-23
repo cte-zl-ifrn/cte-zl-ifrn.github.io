@@ -55,14 +55,14 @@ classDiagram
         url_ambiente_virtual: String
     }
 
-    Turma "n" --> "1" Turno
     Turma  "n" --> "1" CursoCampus
     Turma "n" --> "1" Matriz
     Turma "n" --> "1" Polo
     Turma  "n" --> "1" Convenio
+    Turma "n" --> "1" Turno
 
-    TurmaMinicurso "n" --> "1" Minicurso
     TurmaMinicurso "n" --> "1" Turno
+    TurmaMinicurso "n" --> "1" Minicurso
 
     Minicurso --|> Curso
 ```
