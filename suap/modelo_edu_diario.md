@@ -547,5 +547,36 @@ classDiagram
 
 
 
+## Observações
 
-
+1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
+   1. `edu.diarios.ObservacaoDiario`
+   1. `edu.diarios.MaterialAula`
+   1. `edu.diarios.MaterialDiario`
+   1. `edu.diarios.ConfiguracaoAvaliacao`
+   1. `edu.diarios.ItemConfiguracaoAvaliacao`
+   1. `edu.diarios.NotaAvaliacao`
+   1. `edu.diarios.Trabalho`
+   1. `edu.diarios.EntregaTrabalho`
+   1. `edu.diarios.TopicoDiscussao`
+   1. `edu.diarios.RespostaDiscussao`
+   1. `edu.diarios.JustificativaSuspensaoDiario`
+   1. `edu.diarios.SuspensaoDiario`
+2. Os models abaixo não foram utilizados, mas podem ser utilizados para baixar notas, se houver interesse:
+   1. `edu.diarios.MaterialAula`
+   1. `edu.diarios.MaterialDiario`
+   1. `edu.diarios.ConfiguracaoAvaliacao`
+   1. `edu.diarios.ItemConfiguracaoAvaliacao`
+   1. `edu.diarios.NotaAvaliacao`
+   1. `edu.diarios.Trabalho`
+   1. `edu.diarios.EntregaTrabalho`
+   1. `edu.diarios.TopicoDiscussao`
+   1. `edu.diarios.RespostaDiscussao`
+   1. `edu.diarios.JustificativaSuspensaoDiario`
+   1. `edu.diarios.SuspensaoDiario`
+3. Os models abaixo podem ser usados para envido de mensagens via API:
+   1. ✅ `edu.comunicador.Mensagem`
+   2. ⛔ `edu.comunicador.RegistroLeitura`
+   3. ⛔ `edu.comunicador.RegistroExclusao`
+   4. ⛔ `edu.comunicador.MensagemEntrada`
+   5. ⛔ `edu.comunicador.MensagemSaida`
