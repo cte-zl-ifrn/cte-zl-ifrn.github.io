@@ -176,6 +176,7 @@ classDiagram
 
     CursoCampus "n" --> "1" Modalidade
     CursoCampus "n" --> "1" AreaCurso
+    CursoCampus "n" --> "1" AreaCapes
     CursoCampus "n" --> "1" EixoTecnologico
     CursoCampus "n" --> "1" CursoTecnico
     CursoCampus "n" --> "1" IfrnId : coordenador
@@ -183,17 +184,19 @@ classDiagram
     CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
     CursoCampus "n" --> "1" AreaConcentracao
     CursoCampus "n" --> "1" Diretoria
+    CursoCampus "n" --> "1" AreaCursoFormacaoSuperior
+    CursoCampus "n" --> "1" JustificativaDispensaEnade
 
     CursoTecnico "n" --> "1" EixoTecnologico
 
     Matriz "n" --> "1" NivelEnsino
     
     MatrizCurso "n" --> "1" CursoCampus
-    MatrizCurso  "n" --> "1" Matriz
+    MatrizCurso "n" --> "1" Matriz
 
     Minicurso --|> CursoCampus
 
-    ConteudoMinicurso --> Minicurso
+    ConteudoMinicurso "n" --> "1" Minicurso
 ```
 
 
