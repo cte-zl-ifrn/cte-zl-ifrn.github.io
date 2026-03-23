@@ -55,7 +55,7 @@ classDiagram
         url_ambiente_virtual: String
     }
 
-    Turno "n" --> "1" Turma
+    Turma "1" <-- "n" Turno
     CursoCampus "n" --> "1" Turma
     Matriz "n" --> "1" Turma
     Polo "n" --> "1" Turma
