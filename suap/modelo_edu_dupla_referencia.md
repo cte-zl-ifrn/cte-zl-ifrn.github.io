@@ -61,18 +61,16 @@ classDiagram
     CursoCampus "n" --> "1" Modalidade
     
     Modalidade "n" --> "1" NivelEnsino
-    Componente "n" --> "1" NivelEnsino
-    Matriz "n" --> "1" NivelEnsino
-    Aluno "n" --> "1" NivelEnsino
-
-    ComponenteCurricular "n" --> "1" Componente
-    ComponenteCurricular "n" --> "n" Matriz
-
 
     Componente "n" --> "1" NivelEnsino
     Componente "n" --> "1" GrupoAtuacao
 
-    ComponenteCurricular "n" --> "1" Matriz
+    Matriz "n" --> "1" NivelEnsino
+
+    Aluno "n" --> "1" NivelEnsino
+
+    ComponenteCurricular "n" --> "1" Componente
+    ComponenteCurricular "n" --> "n" Matriz
     ComponenteCurricular "n" --> "1" Componente
 
     MatrizCurso "n" --> "1" CursoCampus
