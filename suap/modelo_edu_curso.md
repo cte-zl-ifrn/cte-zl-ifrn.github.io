@@ -164,26 +164,7 @@ classDiagram
         descricao: String!!
     }
     class IfrnId {
-        tipo_relacionamento: IntegerChoice
-        ativo: Boolean!
-        username: String!!
-        first_name: String!
-        last_name: String!
-        email: String!
-        is_active: Boolean
-        eh_servidor: Boolean!
-        eh_aluno: Boolean!
-        eh_prestador: Boolean!
-        eh_usuarioexterno: Boolean!
-        eh_docente: Boolean!
-        eh_tecnico_administrativo: Boolean!
-        eh_estrangeiro: Boolean!
-        nome: String!
-        nome_usual: String!
-        nome_social: String
-        nome_registro: String
-        email: Email
-        email_secundario: Email!
+        _: VerDiagramaIfrnId
     }
 
     Componente --> NivelEnsino
@@ -196,7 +177,11 @@ classDiagram
     CursoCampus --> AreaCurso
     CursoCampus --> EixoTecnologico
     CursoCampus --> CursoTecnico
-    CursoCampus --> IfrnId
+    CursoCampus "n" --> "1" IfrnId : coordenador
+    CursoCampus "n" --> "1" IfrnId : coordenador_2
+    CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
+    
+    CursoCampus "n" --> "1" AreaConcentracao
 
     CursoCampus "n" --> "1" Diretoria
 
