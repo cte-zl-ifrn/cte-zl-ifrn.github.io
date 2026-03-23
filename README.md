@@ -5,17 +5,18 @@ Este é o **ecossistema** de aplicações que integram os Ambientes Virtuais de 
 ## Componentes do Ecossistema
 
 1. [**AVA**](https://ava.ifrn.edu.br) (RNP e IFRN): Implantado sobre a plataforma Learning Management System (LMS) Moodle, é o equivalente digital da sala de aula, NENHUM registro acadêmico existe ou deve existir lá, ou seja, É ONDE o processo de ensino/aprendizagem ocorre. Protocolos suportados: oficialmente `SGA`. Protocolos opcionais:
-        1. [`Native Moodle Web Service`](https://docs.moodle.org/dev/Creating_a_web_service_client): plugin nativo com implementações `REST`, `SOAP` e `XML-RPC`.
-        2. [`"RESTful"`](https://moodle.org/plugins/webservice_restful): plugin de terceiros com implementações `JSON`, `XML` e `Form`
-        3. [`REST`](https://moodle.org/plugins/webservice_restjson): plugin de terceiros com implementações `JSON` e `XML`
-        4. [`XML-RPC`](https://moodle.org/plugins/webservice_xmlrpc): plugin de terceiros para suporte a `XML-RPC`
-        5. [`MCP`](https://moodle.org/plugins/webservice_mcp): plugin de terceiros com implementação do `Model Context Protocol` para uso por agentes de IA
-2. **[SUAP](https://portal.suap.ifrn.edu.br/) Edu** (IFRN): Módulo do Sistema Unificado de Administração Pública (SUAP) com função de Sistema de Gestão Acadêmica (SGA). é onde TODO o registro acadêmico do aluno, desde a matrícula até o egresso, ocorre, ou seja, NÃO É ONDE o processo ensino/aprendizagem ocorre. Protocolos suportados: `JSON REST`.
-3. **SUAP IdP** (IFRN): Módulo difuso no SUAP para gestao de identidades  (Identity Provider - IdP), ou seja, é onde usuários (discentes, seus responsáveis, docentes, demais colaboradores e comunidade externa) têm suas identidade de usuários provisionadas. Protocolos suportados: _nenhum_.
-4. **SUAP SSO** (IFRN): Módulo no SUAP para autenticação única de usuários (Single Sign-On - SSO), ou seja, é onde os usuários têm suas identidades confirmadas. Protocolos suportados: `oAuth2` e `JWT`.
-5. [**Integrador AVA**](https://github.com/cte-zl-ifrn/integration-integrador_ava) (IFRN): Middleware entre o SUAP e o Moodleegue abaixo a lista de informações extras solicitadas, por processo (integração ou autenticação)
-6. [**Painel AVA**](https://github.com/cte-zl-ifrn/integration-painel_ava) (IFRN): Portal entre o SUAP e os AVA, ou seja, é onde os usuários têm todos os seus cursos, de todos os AVA, de forma centralizada. Protocolos suportados: `SGA`, `JSON REST`, `oAuth2` e `JWT`.
-7. [**AVA IFRN Mobile**](https://github.com/cte-zl-ifrn/moodle-app) (IFRN): Aplicativo Móvel para Android e iOS que faz interface para o AVA, Painel AVA e SUAP SSO em arquitetura móvel baseada em Ionic. Protocolos suportados: `Native Moodle Web Service`, `JSON RESTful`, `JWT` e `SGA`. Em construção.
+   1. [`Native Moodle Web Service`](https://docs.moodle.org/dev/Creating_a_web_service_client): plugin nativo com implementações `REST`, `SOAP` e `XML-RPC`.
+   2. [`"RESTful"`](https://moodle.org/plugins/webservice_restful): plugin de terceiros com implementações `JSON`, `XML` e `Form`
+   3. [`REST`](https://moodle.org/plugins/webservice_restjson): plugin de terceiros com implementações `JSON` e `XML`
+   4. [`XML-RPC`](https://moodle.org/plugins/webservice_xmlrpc): plugin de terceiros para suporte a `XML-RPC
+   5. [`MCP`](https://moodle.org/plugins/webservice_mcp): plugin de terceiros com implementação do `Model Context Protocol` para uso por agentes de IA
+2. **[SUAP](https://portal.suap.ifrn.edu.br/)** (IFRN): O Sistema Unificado de Administração é o software de gestão integrada (Enterprise Resource Planning - ERP) do IFRN.
+   1. **Edu** - Módulo do SUAP com função de Sistema de Gestão Acadêmica (SGA). é onde TODO o registro acadêmico do aluno, desde a matrícula até o egresso, ocorre, ou seja, NÃO É ONDE o processo ensino/aprendizagem ocorre. Protocolos suportados: `JSON REST`.
+   2. **IdP** (IFRN): Módulo difuso no SUAP para gestao de identidades  (Identity Provider - IdP), ou seja, é onde usuários (discentes, seus responsáveis, docentes, demais colaboradores e comunidade externa) têm suas identidade de usuários provisionadas. Protocolos suportados: _nenhum_.
+   3. **SUAP SSO** (IFRN): Módulo no SUAP para autenticação única de usuários (Single Sign-On - SSO), ou seja, é onde os usuários têm suas identidades confirmadas. Protocolos suportados: `oAuth2` e `JWT`.
+3. [**Integrador AVA**](https://github.com/cte-zl-ifrn/integration-integrador_ava) (IFRN): Middleware entre o SUAP e o Moodleegue abaixo a lista de informações extras solicitadas, por processo (integração ou autenticação)
+4. [**Painel AVA**](https://github.com/cte-zl-ifrn/integration-painel_ava) (IFRN): Portal entre o SUAP e os AVA, ou seja, é onde os usuários têm todos os seus cursos, de todos os AVA, de forma centralizada. Protocolos suportados: `SGA`, `JSON REST`, `oAuth2` e `JWT`.
+5. [**AVA IFRN Mobile**](https://github.com/cte-zl-ifrn/moodle-app) (IFRN): Aplicativo Móvel para Android e iOS que faz interface para o AVA, Painel AVA e SUAP SSO em arquitetura móvel baseada em Ionic. Protocolos suportados: `Native Moodle Web Service`, `JSON RESTful`, `JWT` e `SGA`. Em construção.
 
 
 ## Instância AVA
