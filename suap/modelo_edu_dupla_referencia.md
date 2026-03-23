@@ -59,7 +59,6 @@ classDiagram
     }
 
     Componente "n" --> "1" NivelEnsino
-    Componente "n" --> "1" GrupoAtuacao
 
     Matriz "n" --> "1" NivelEnsino
 
