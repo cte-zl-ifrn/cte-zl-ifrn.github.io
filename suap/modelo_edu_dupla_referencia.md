@@ -93,6 +93,38 @@ classDiagram
 
     ComponenteCurricular "n" --> "1" Componente
     ComponenteCurricular "n" --> "n" Matriz
+
+
+    Componente "n" --> "1" NivelEnsino
+    Componente "n" --> "1" GrupoAtuacao
+
+    ComponenteCurricular "n" --> "1" Matriz
+    ComponenteCurricular "n" --> "1" Componente
+    ComponenteCurricular "n" --> "1" Matriz
+
+    CursoCampus "n" --> "1" Modalidade
+    CursoCampus "n" --> "1" AreaCurso
+    CursoCampus "n" --> "1" AreaCapes
+    CursoCampus "n" --> "1" EixoTecnologico
+    CursoCampus "n" --> "1" CursoTecnico
+    CursoCampus "n" --> "1" IfrnId : coordenador
+    CursoCampus "n" --> "1" IfrnId : coordenador_2
+    CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
+    CursoCampus "n" --> "1" AreaConcentracao
+    CursoCampus "n" --> "1" Diretoria
+    CursoCampus "n" --> "1" AreaCursoFormacaoSuperior
+    CursoCampus "n" --> "1" JustificativaDispensaEnade
+
+    CursoTecnico "n" --> "1" EixoTecnologico
+
+    Matriz "n" --> "1" NivelEnsino
+    
+    MatrizCurso "n" --> "1" CursoCampus
+    MatrizCurso "n" --> "1" Matriz
+
+    Minicurso --|> CursoCampus
+
+    ConteudoMinicurso "n" --> "1" Minicurso    
 ```
 
 
