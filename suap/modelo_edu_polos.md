@@ -4,6 +4,9 @@
 
 ```mermaid
 classDiagram
+    class CursoCampus {
+        _: VerDiagramaCursos
+    }
     class IfrnId {
         _: VerDiagramaIfrnId
     }
@@ -15,9 +18,6 @@ classDiagram
     }
     class Cidade {
         _: VerDiagramCadastroGerais
-    }
-    class CursoCampus {
-        _: VerDiagramaCursos
     }
     class Sala {
         _: VerDiagramCadastroGerais
@@ -97,9 +97,9 @@ classDiagram
     Polo "1" --> "n" HorarioFuncionamentoPolo
     Polo "1" --> "n" HorarioPolo
 
+    TutorPolo "n" -- "n" CursoCampus
     CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
-    TutorPolo "n" -- "n" CursoCampus
 
     AtividadePolo "n" <-- "1" IfrnId
     AtividadePolo "n" <-- "1" Sala
