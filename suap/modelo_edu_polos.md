@@ -95,7 +95,7 @@ classDiagram
 
     CoordenadorPolo "n" <-- "1" IfrnId
     TutorPolo "n" <-- "1" IfrnId
-    TutorPolo "n" -- "n" IfrnId
+    TutorPolo "n" -- "n" CursoCampus
     AtividadePolo "n" <-- "1" IfrnId
 
     AtividadePolo "n" <-- "1" Sala
