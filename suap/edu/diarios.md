@@ -49,12 +49,12 @@ classDiagram
         url_ambiente_virtual: String
     }
     class MonitorMinicurso{
-        aluno: IfrnId!
+        aluno: IfrnId! 🥸
         turma_minicurso: TurmaMinicurso!
         carga_horaria: Integer
     }
     class ProfessorMinicurso{
-        professor: IfrnId!
+        professor: IfrnId! 🥸
         turma_minicurso: TurmaMinicurso!
         carga_horaria: Integer
         carga_horaria_semanal: Decimal
@@ -91,7 +91,7 @@ classDiagram
     }
     class ProfessorDiario{
         diario: Diario!
-        professor: IfrnId!
+        professor: IfrnId! 🥸
         tipo: TipoProfessorDiario!
         data_inicio_etapa_1: Date
         data_fim_etapa_1: Date
