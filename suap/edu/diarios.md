@@ -139,8 +139,6 @@ classDiagram
     Minicurso --|> Curso
 
     Turma --> Polo
-    Turma --> Convenio
-    Turma --> Matriz
 
     TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
