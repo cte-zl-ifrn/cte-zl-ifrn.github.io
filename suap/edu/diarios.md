@@ -141,8 +141,6 @@ classDiagram
     TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
 
-    ParticipanteTurmaMinicurso --> TurmaMinicurso
-
     MonitorMinicurso --> IfrnId
     MonitorMinicurso --> TurmaMinicurso
 
