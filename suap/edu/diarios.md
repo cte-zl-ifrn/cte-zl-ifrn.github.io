@@ -138,8 +138,6 @@ classDiagram
 
     Minicurso --|> Curso
 
-    Turma --> Polo
-
     TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
 
