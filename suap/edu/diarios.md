@@ -55,14 +55,8 @@ classDiagram
         descricao: String!
         sigla: String!
     }
-    class ParticipanteTurmaMinicurso{
-        aluno: Aluno!
-        turma: TurmaMinicurso!
-        nota: Integer
-        completude: Integer
-    }
     class MonitorMinicurso{
-        aluno: Aluno!
+        aluno: IfrnId!
         turma_minicurso: TurmaMinicurso!
         carga_horaria: Integer
     }
@@ -138,15 +132,12 @@ classDiagram
     }
 
     Diario "n" --> "1" Turma
+    Turma "n" --> "1" CursoCampus
 
     CursoCampus --> IfrnId
 
     Minicurso --|> Curso
 
-    ConteudoMinicurso --> Minicurso
-
-    Turma --> Turno
-    Turma --> CursoCampus
     Turma --> Polo
     Turma --> Convenio
     Turma --> Matriz
@@ -154,10 +145,9 @@ classDiagram
     TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
 
-    ParticipanteTurmaMinicurso --> Aluno
     ParticipanteTurmaMinicurso --> TurmaMinicurso
 
-    MonitorMinicurso --> Aluno
+    MonitorMinicurso --> IfrnId
     MonitorMinicurso --> TurmaMinicurso
 
     ProfessorMinicurso --> IfrnId
