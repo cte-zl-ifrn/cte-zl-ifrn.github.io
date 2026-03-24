@@ -188,7 +188,7 @@ classDiagram
     Diario --> Sala
 
     ProfessorDiario --> Diario
-    ProfessorDiario --> Professor
+    ProfessorDiario --> IfrnId
     ProfessorDiario --> TipoProfessorDiario
 
     Falta --> MatriculaDiario
