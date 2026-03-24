@@ -26,22 +26,6 @@ classDiagram
     class Turma{
         _: VerDiagramaTurma
     }
-    class TurmaMinicurso{
-        descricao: String!
-        turno: Turno
-        ano_letivo: Integer!
-        periodo_letivo: Integer!
-        data_inicio: Date!
-        data_fim: Date!
-        minicurso: Minicurso!
-        gerar_matricula: Boolean!
-        modelo_padrao: Boolean!
-        nota_minima: Integer!
-        completude_minima: Integer
-        integracao_com_moodle: Boolean
-        url_moodle: String
-        url_ambiente_virtual: String
-    }
     class Diario{
         turma: Turma!
         componente_curricular: ComponenteCurricular!
