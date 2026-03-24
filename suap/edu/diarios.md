@@ -97,7 +97,7 @@ classDiagram
         calendario_academico: CalendarioAcademico!
         local_aula: Sala
         local_laboratorio: Sala
-        locais_aula_secundarios: ManySala
+        locais_aula_secundarios: set[Sala]
         descricao_dinamica: String
         segundo_semestre: Boolean!
         integracao_com_moodle: Boolean!
@@ -174,11 +174,11 @@ classDiagram
 
     Diario --> Turma
     Diario --> ComponenteCurricular
-    Diario --> HorarioCampus
-    Diario --> Turno
-    Diario --> EstruturaCurso
-    Diario --> CalendarioAcademico
-    Diario --> Sala
+    %% Diario --> Turno
+    %% Diario --> HorarioCampus
+    %% Diario --> EstruturaCurso
+    %% Diario --> CalendarioAcademico
+    %% Diario --> Sala
 
     ProfessorDiario --> Diario
     ProfessorDiario --> IfrnId
