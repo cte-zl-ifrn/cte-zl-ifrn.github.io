@@ -137,6 +137,8 @@ classDiagram
         registro_frequencia_confirmado: Boolean!
     }
 
+    Diario "n" --> "1" Turma
+
     CursoCampus --> IfrnId
 
     Minicurso --|> Curso
@@ -161,7 +163,6 @@ classDiagram
     ProfessorMinicurso --> IfrnId
     ProfessorMinicurso --> TurmaMinicurso
 
-    Diario --> Turma
     Diario --> ComponenteCurricular
     %% Diario --> Turno
     %% Diario --> HorarioCampus
