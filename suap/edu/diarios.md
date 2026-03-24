@@ -30,18 +30,7 @@ classDiagram
         _: VerDiagramaIfrnId
     }
     class Turma{
-        codigo: String!
-        descricao: String!
-        ano_letivo: int!
-        periodo_letivo: int!
-        periodo_matriz: int!
-        turno: Turno
-        curso_campus: CursoCampus
-        matriz: Matriz
-        polo: Polo
-        convenio: Convenio
-        sigla: String
-        codigo_educacenso: String
+        _: VerDiagramaTurma
     }
     class TurmaMinicurso{
         descricao: String!
