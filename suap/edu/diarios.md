@@ -18,16 +18,13 @@ classDiagram
         justificativa_dispensa_ingressante: JustificativaDispensaEnade
         area_concentracao: AreaConcentracao
         diretoria: Diretoria
-        coordenador: IfrnId
-        coordenador_2: IfrnId
+        coordenador: IfrnId 🥸
+        coordenador_2: IfrnId 🥸
         matrizes: Matriz
         mesmo_curso: CursoCampus
     }
     class Minicurso {
         _: VerDiagramaCursos
-    }
-    class IfrnId {
-        _: VerDiagramaIfrnId
     }
     class Turma{
         _: VerDiagramaTurma
@@ -128,17 +125,13 @@ classDiagram
     CursoCampus "1" <-- "n" Turma
     ComponenteCurricular "1" <-- "n" Diario
     
-    CursoCampus --> IfrnId
-
     Minicurso --|> Curso
 
     TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
 
-    MonitorMinicurso --> IfrnId
     MonitorMinicurso --> TurmaMinicurso
 
-    ProfessorMinicurso --> IfrnId
     ProfessorMinicurso --> TurmaMinicurso
 
 
@@ -149,7 +142,6 @@ classDiagram
     %% Diario --> Sala
 
     ProfessorDiario --> Diario
-    ProfessorDiario --> IfrnId
     ProfessorDiario --> TipoProfessorDiario
 
 
