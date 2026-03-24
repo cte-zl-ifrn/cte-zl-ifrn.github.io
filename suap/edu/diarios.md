@@ -127,7 +127,6 @@ classDiagram
     
     Minicurso --|> Curso
 
-    TurmaMinicurso --> Turno
     TurmaMinicurso --> Minicurso
 
     MonitorMinicurso --> TurmaMinicurso
@@ -135,6 +134,7 @@ classDiagram
     ProfessorMinicurso --> TurmaMinicurso
 
 
+    % TurmaMinicurso --> Turno
     %% Diario --> Turno
     %% Diario --> HorarioCampus
     %% Diario --> EstruturaCurso
