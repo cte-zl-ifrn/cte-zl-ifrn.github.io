@@ -94,12 +94,15 @@ classDiagram
     Turma "1" <-- "n" Diario
     CursoCampus "1" <-- "n" Turma
     ComponenteCurricular "1" <-- "n" Diario
+
+    Diario "n" --> "1" Sala: local_aula
+    Diario "n" --> "1" Sala: local_laboratorio
+    Diario "n" --> "1" Sala: locais_aula_secundarios
     
     %% Diario -- Turno
     %% Diario -- HorarioCampus
     %% Diario -- EstruturaCurso
     %% Diario -- CalendarioAcademico
-    %% Diario -- Sala
 
     ProfessorDiario --> Diario
     ProfessorDiario --> TipoProfessorDiario
