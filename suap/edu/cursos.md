@@ -23,12 +23,6 @@ classDiagram
         descricao: String!!
         codigo_inep: String
     }
-    class CursoTecnico{
-        codigo_inep: String!!
-        nome: String!!
-        eixo_tecnologico: EixoTecnologico!
-        excluido: Boolean!
-    }
     class Modalidade {
         descricao: String!!
         nivel_ensino: NivelEnsino
@@ -174,7 +168,6 @@ classDiagram
     CursoCampus "n" --> "1" AreaCurso
     CursoCampus "n" --> "1" AreaCapes
     CursoCampus "n" --> "1" EixoTecnologico
-    CursoCampus "n" --> "1" CursoTecnico
     CursoCampus "n" --> "1" IfrnId : coordenador
     CursoCampus "n" --> "1" IfrnId : coordenador_2
     CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
@@ -182,8 +175,6 @@ classDiagram
     CursoCampus "n" --> "1" Diretoria
     CursoCampus "n" --> "1" AreaCursoFormacaoSuperior
     CursoCampus "n" --> "1" JustificativaDispensaEnade
-
-    CursoTecnico "n" --> "1" EixoTecnologico
 
     Matriz "n" --> "1" NivelEnsino
     
@@ -213,3 +204,4 @@ classDiagram
    6. `edu.cursos.Reconhecimento`
    7. `edu.cursos.ConfiguracaoCertificacaoParcial`
    8. `edu.cursos.ComponenteCurricularCertificacaoParcial`
+   9. `edu.cursos.CursoTecnico`
