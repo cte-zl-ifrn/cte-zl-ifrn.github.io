@@ -147,13 +147,6 @@ classDiagram
         outros_professor_diario: Many(ProfessorDiario)
         registro_frequencia_confirmado: Boolean!
     }
-    class Falta {
-        matricula_diario: MatriculaDiario!
-        aula: Aula!
-        quantidade: Integer!
-        abono_faltas: AbonoFaltas
-        contabilizar: Boolean!
-    }
 
     CursoCampus --> IfrnId
 
@@ -191,9 +184,6 @@ classDiagram
     ProfessorDiario --> IfrnId
     ProfessorDiario --> TipoProfessorDiario
 
-    Falta --> MatriculaDiario
-    Falta --> Aula
-    Falta --> AbonoFaltas
 
     Aula --> ProfessorDiario
 ```
