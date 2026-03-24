@@ -4,6 +4,9 @@
 
 ```mermaid
 classDiagram
+    class IfrnId {
+        _: VerDiagramaIfrnId
+    }
     class Componente {
         _: VerDiagramaComponente
     }
@@ -18,41 +21,18 @@ classDiagram
         nivel_ensino: NivelEnsino
         componentes: set[ComponenteCurricular]
     }
-
-    class EixoTecnologico {
+    class MatrizCurso {
+        _: VerDiagramaMatriz
+    }
+    class Diretoria{
+        _: VerDiagramaDiretoria
+    }
+    class NivelEnsino {
         descricao: String!!
-        codigo_inep: String
     }
     class Modalidade {
         descricao: String!!
         nivel_ensino: NivelEnsino
-    }
-    class AreaCapes {
-        descricao: String!!
-    }
-    class AreaCursoFormacaoSuperior {
-        codigo_cine: String!
-        codigo_area_detalhada: String!
-        codigo_area_especifica: String!
-        codigo_area_geral: String!
-
-        cine: String
-        area_detalhada: String!
-        area_especifica: String!
-        area_geral: String!
-    }
-
-    class JustificativaDispensaENADE{
-        descricao: String!!
-        ativo: Boolean!
-    }
-    class AreaConcentracao{
-        descricao: String!!
-        area_capes: AreaCapes
-        area_avaliacao: AreaAvaliacao
-    }
-    class Diretoria{
-        _: VerDiagramaDiretoria
     }
     class CursoCampus{
         %% Identificação
@@ -137,9 +117,6 @@ classDiagram
         autoinstrucional: Boolean
 
     }
-    class MatrizCurso {
-        _: VerDiagramaMatriz
-    }
     class Minicurso {
     }
     class ConteudoMinicurso {
@@ -147,34 +124,18 @@ classDiagram
         ch: Integer!
         minicurso: Minicurso!
     }
-    class AreaCurso {
-        descricao: String!!
-    }
-    class NivelEnsino {
-        descricao: String!!
-    }
-    class IfrnId {
-        _: VerDiagramaIfrnId
-    }
 
     Componente "n" --> "1" NivelEnsino
-    Componente "n" --> "1" GrupoAtuacao
 
     ComponenteCurricular "n" --> "1" Matriz
     ComponenteCurricular "n" --> "1" Componente
     ComponenteCurricular "n" --> "1" Matriz
 
     CursoCampus "n" --> "1" Modalidade
-    CursoCampus "n" --> "1" AreaCurso
-    CursoCampus "n" --> "1" AreaCapes
-    CursoCampus "n" --> "1" EixoTecnologico
     CursoCampus "n" --> "1" IfrnId : coordenador
     CursoCampus "n" --> "1" IfrnId : coordenador_2
     CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
-    CursoCampus "n" --> "1" AreaConcentracao
     CursoCampus "n" --> "1" Diretoria
-    CursoCampus "n" --> "1" AreaCursoFormacaoSuperior
-    CursoCampus "n" --> "1" JustificativaDispensaEnade
 
     Matriz "n" --> "1" NivelEnsino
     
@@ -205,3 +166,10 @@ classDiagram
    7. `edu.cursos.ConfiguracaoCertificacaoParcial`
    8. `edu.cursos.ComponenteCurricularCertificacaoParcial`
    9. `edu.cursos.CursoTecnico`
+   10. `edu.cursos.AreaCapes`
+   11. `edu.cursos.AreaConcentracao`
+   12. `edu.cursos.EixoTecnologico`
+   13. `edu.cursos.AreaCursoFormacaoSuperior`
+   14. `edu.cursos.JustificativaDispensaENADE`
+   15. `edu.cursos.AreaCurso`
+   16. `edu.cursos.GrupoAtuacao`
