@@ -1,6 +1,7 @@
-# SUAP Edu
+# SUAP Edu - Componente
 
-## Componente - Digrama
+
+## Digrama
 
 ```mermaid
 classDiagram
@@ -9,9 +10,6 @@ classDiagram
     }
     class TipoComponente{
         descricao: String!
-    }
-    class GrupoAtuacao{
-        descricao: String!        
     }
     class Componente {
         descricao: String!
@@ -33,12 +31,6 @@ classDiagram
         grupo_atuacao: GrupoAtuacao
 
         sequencial: Integer
-    }
-    class ClassificacaoComplementarComponenteCurricular {
-        descricao: String!!
-    }
-    class Nucleo{
-        descricao: String!!
     }
     class ComponenteCurricular {
         %% Dados gerais
@@ -92,19 +84,24 @@ classDiagram
 
     Componente "N" --> "1" TipoComponente
     Componente "N" --> "1" NivelEnsino
-    Componente "N" --> "1" GrupoAtuacao
-    Componente "N" --> "1" Diretoria
 
     ComponenteCurricular "N" --> "1" Matriz
     ComponenteCurricular "N" --> "1" Componente
-    ComponenteCurricular "N" --> "1" ClassificacaoComplementarComponenteCurricular
-    ComponenteCurricular "N" --> "1" Nucleo
 
     Diario "N" --> "1" ComponenteCurricular
 ```
+
 
 > **ComponenteCurricular**
 > 1. tipo = `[[1, 'Regular'], [2, 'Seminário'], [3, 'Prática Profissional'], [4, 'Trabalho de Conclusão de Curso'], [5, 'Atividade de Extensão'], [6, 'Prática como Componente Curricular'], [7, 'Visita Técnica / Aula da Campo'], [8, 'Componentes Extracurriculares']]`
 > 2. tipo_estagio_docente = `[[1, 'Estágio Docente I'], [2, 'Estágio Docente II'], [3, 'Estágio Docente III'], [4, 'Estágio Docente IV'], [5, 'Estágio Docente de Matriz Anterior']]`
 > 3. tipo_modulo = `[[1, 'Módulo I'], [2, 'Módulo II'], [3, 'Módulo III'], [4, 'Módulo IV'], [5, 'Módulo V'], [6, 'Módulo VI'], [7, 'Módulo VII'], [8, 'Módulo VIII'], [9, 'Módulo IX'], [10, 'Módulo X'], [11, 'Módulo XI'], [12, 'Módulo XII']]`
 > 4. qtd_avaliacoes = `[[0, 'Zero'], [1, 'Uma'], [2, 'Duas'], [3, 'Três'], [4, 'Quatro']]`
+
+
+## Observações
+
+1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
+   1. `edu.cadastros_gerais.GrupoAtuacao`
+   2. `edu.cadastros_gerais.ClassificacaoComplementarComponenteCurricular`
+   3. `edu.cadastros_gerais.Nucleo`
