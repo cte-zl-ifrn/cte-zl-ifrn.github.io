@@ -98,11 +98,10 @@ classDiagram
     Diario "n" --> "1" Sala: local_aula
     Diario "n" --> "1" Sala: local_laboratorio
     Diario "n" --> "1" Sala: locais_aula_secundarios
-    
-    %% Diario -- Turno
-    %% Diario -- HorarioCampus
-    %% Diario -- EstruturaCurso
-    %% Diario -- CalendarioAcademico
+    Diario "n" --> "1" CalendarioAcademico
+    Diario "n" --> "1" EstruturaCurso
+    Diario "n" --> "1" Turno
+    Diario "n" --> "1" HorarioCampus
 
     ProfessorDiario --> Diario
     ProfessorDiario --> TipoProfessorDiario
