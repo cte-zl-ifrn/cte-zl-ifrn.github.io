@@ -95,14 +95,6 @@ classDiagram
     CursoCampus "1" <-- "n" Turma
     ComponenteCurricular "1" <-- "n" Diario
 
-    Diario "n" --> "1" Sala: local_aula
-    Diario "n" --> "1" Sala: local_laboratorio
-    Diario "n" --> "1" Sala: locais_aula_secundarios
-    Diario "n" --> "1" CalendarioAcademico
-    Diario "n" --> "1" EstruturaCurso
-    Diario "n" --> "1" Turno
-    Diario "n" --> "1" HorarioCampus
-
     ProfessorDiario --> Diario
     ProfessorDiario --> TipoProfessorDiario
 
@@ -124,13 +116,18 @@ classDiagram
 ## Observações
 
 1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
-   1. `edu.diarios.ObservacaoDiario`
-   1. `edu.diarios.OcorrenciaDiario`
-   1. `edu.diarios.MaterialAula`
-   1. `edu.diarios.MaterialDiario`
-   1. `edu.diarios.Trabalho`
-   1. `edu.diarios.EntregaTrabalho`
-   1. `edu.diarios.TopicoDiscussao`
-   1. `edu.diarios.RespostaDiscussao`
-   1. `edu.diarios.JustificativaSuspensaoDiario`
-   1. `edu.diarios.SuspensaoDiario`
+   1. `edu.cadastros_gerais.HorarioCampus`
+   2. `edu.cadastros_gerais.SuspensaoDiario`
+   3. `edu.diarios.ObservacaoDiario`
+   4. `edu.diarios.OcorrenciaDiario`
+   5. `edu.diarios.MaterialAula`
+   6. `edu.diarios.MaterialDiario`
+   7. `edu.diarios.Trabalho`
+   8. `edu.diarios.EntregaTrabalho`
+   9. `edu.diarios.TopicoDiscussao`
+   10. `edu.diarios.RespostaDiscussao`
+   11. `edu.diarios.SuspensaoDiario`
+   12. `edu.diarios.JustificativaSuspensaoDiario`
+   13. `edu.cursos.EstruturaCurso`
+   14. `edu.diretorisas.CalendarioAcademico`
+   15. `comum.Sala`
