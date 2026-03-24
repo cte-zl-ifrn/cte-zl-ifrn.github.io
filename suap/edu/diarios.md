@@ -134,12 +134,12 @@ classDiagram
     ProfessorMinicurso --> TurmaMinicurso
 
 
-    % TurmaMinicurso --> Turno
-    %% Diario --> Turno
-    %% Diario --> HorarioCampus
-    %% Diario --> EstruturaCurso
-    %% Diario --> CalendarioAcademico
-    %% Diario --> Sala
+    %% TurmaMinicurso -- Turno
+    %% Diario -- Turno
+    %% Diario -- HorarioCampus
+    %% Diario -- EstruturaCurso
+    %% Diario -- CalendarioAcademico
+    %% Diario -- Sala
 
     ProfessorDiario --> Diario
     ProfessorDiario --> TipoProfessorDiario
