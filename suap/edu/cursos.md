@@ -7,15 +7,6 @@ classDiagram
     class IfrnId {
         _: VerDiagramaIfrnId
     }
-    class Componente {
-        _: VerDiagramaComponente
-    }
-    class ComponenteCurricular {
-        _: VerDiagramaComponente
-        matriz: Matriz!
-        componente: Componente!
-        componente_curricular_associado: ComponenteCurricular
-    }
     class Matriz {
         _: VerDiagramaMatriz
         nivel_ensino: NivelEnsino
@@ -125,26 +116,20 @@ classDiagram
         minicurso: Minicurso!
     }
 
-    Componente "n" --> "1" NivelEnsino
-
-    ComponenteCurricular "n" --> "1" Matriz
-    ComponenteCurricular "n" --> "1" Componente
-    ComponenteCurricular "n" --> "1" Matriz
-
-    CursoCampus "n" --> "1" Modalidade
-    CursoCampus "n" --> "1" IfrnId : coordenador
-    CursoCampus "n" --> "1" IfrnId : coordenador_2
-    CursoCampus "n" --> "n" IfrnId : coordenadores_estagio_docente
-    CursoCampus "n" --> "1" Diretoria
+    Modalidade "1" <-- "n" CursoCampus
+    IfrnId "1" <-- "n" CursoCampus : coordenador
+    IfrnId "1" <-- "n" CursoCampus : coordenador_2
+    IfrnId "n" <-- "n" CursoCampus : coordenadores_estagio_docente
+    Diretoria "1" <-- "n" CursoCampus
 
     Matriz "n" --> "1" NivelEnsino
     
-    MatrizCurso "n" --> "1" CursoCampus
+    CursoCampus "1" <-- "n" MatrizCurso
     MatrizCurso "n" --> "1" Matriz
 
-    Minicurso --|> CursoCampus
+    CursoCampus <| -- Minicurso
 
-    ConteudoMinicurso "n" --> "1" Minicurso
+    Minicurso "1" <-- "n" ConteudoMinicurso
 ```
 
 
