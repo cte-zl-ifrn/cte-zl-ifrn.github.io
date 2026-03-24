@@ -4,278 +4,30 @@
 
 ```mermaid
 classDiagram
-    class Componente {
-        descricao: String!
-        descricao_historico: String!
-        tipo: TipoComponente!
-        sigla: String!!
-        nivel_ensino: NivelEnsino!
-        ativo: Boolean!
-
-        ch_hora_relogio: Integer!
-        ch_hora_aula: Integer!
-        ch_qtd_creditos: Integer!
-
-        observacao: Text
-        sigla_qacademico: String
-        abreviatura: String
-
-        grupo_atuacao: GrupoAtuacao
-
-        sequencial: Integer
-    }
     class ComponenteCurricular {
-        %% Dados gerais
-        matriz: Matriz!
-        componente: Componente!
-        classificacao_complementar: ClassificacaoComplementarComponenteCurricular
-        periodo_letivo: Integer!
-        tipo: IntegerChoice
-        optativo: Boolean!
-        is_seminario_estagio_docente: Boolean!
-        tipo_estagio_docente: IntegerChoice
-        tipo_modulo: IntegerChoice
-        qtd_avaliacoes: IntegerChoice
-        nucleo: Nucleo!
-
-        %% Carga horária
-        ch_presencial: Integer!
-        ch_pratica: Integer!
-        ch_extensao: Integer!
-        ch_pcc: Integer!
-        ch_visita_tecnica: Integer!
-        percentual_maximo_ead: Integer!
-        qtd_aulas_ead: Integer!
-
-        %% Pré requisitos
-        pre_requisitos: "1" --> "0..*" ComponenteCurricular
-
-        %% Co-requisitos
-        co_requisitos: "1" --> "0..*" ComponenteCurricular
-
-        avaliacao_por_conceito: Boolean!
-        is_dinamico: Boolean!
-        componente_curricular_associado: ComponenteCurricular
-        segundo_semestre: Boolean!
-        pode_fechar_pendencia: Boolean!
-        ementa: Text
-
-        %% distribuição da quantidade de créditos do componente curricular anual no semestre
-        ch_semanal_1s: Integer
-        ch_semanal_2s: Integer
+        _: VerDiagramaComponentes
     }
-    class ClassificacaoComplementarComponenteCurricular {
-        descricao: String!!
-    }
-    class Matriz {
-        %% Dados gerais
-        descricao: String
-        ano_criacao: Integer
-        periodo_criacao: Integer [[1, '1'], [2, '2']]
-        ativo: Boolean
-        data_inicio: Date
-        data_fim: Date 
-        ppp: File 
-        ppc: File 
-        qtd_periodos_letivos: Integer [[x, x] for x in range(1, 13)])
-        nivel_ensino: NivelEnsino 
-        natureza_participacao: NaturezaParticipacao 
-
-        %% Carga horária
-        ch_componentes_obrigatorios: Integer
-        ch_componentes_optativos: Integer
-        ch_componentes_eletivos: Integer
-        ch_seminarios: Integer
-        ch_pratica_profissional: Integer
-        ch_atividades_complementares: Integer
-        ch_atividades_aprofundamento: Integer
-        ch_componentes_extensao: Integer
-        ch_componentes_tcc: Integer
-        ch_pratica_como_componente: Integer
-        ch_visita_tecnica: Integer
-        ch_atividades_extensao: Integer
-        ch_componentes_com_extensao: Integer
-
-        componentes: Many[Componente(ComponenteCurricular)]
-
-        inconsistente: Boolean
-        exige_tcc: Boolean
-        permite_etapas_componente_tcc: Boolean
-
-        observacao: Text 
-
-        %% Estágio
-        exige_estagio: Boolean 
-        ch_minima_estagio: Integer 
-        periodo_minimo_estagio_obrigatorio: IntegerChoice
-        periodo_minimo_estagio_nao_obrigatorio: IntegerChoice
-
-        requer_vinculacao_extensao_diarios: Boolean!
-
-        %% certificação parcial
-        emite_certificacao_parcial: Boolean!
-        certificado_parcial_acumulavel: Boolean!
-    }
-    class CursoTecnico{
-        codigo_inep: String!!
-        nome: String!!
-        eixo_tecnologico: EixoTecnologico!
-        excluido: Boolean!
-    }
-    class CursoCampus{
-        %% Identificação
-        codigo_academico: Integer
-        descricao: String!
-        descricao_historico: String!
-        codigo_censup: String
-        codigo_emec: String
-        codigo_sistec: String
-        codigo_educacenso: String
-        ciencia_sem_fronteira: Boolean!
-        formacao_de_professores: Boolean!
-
-        %% Dados da funcionamento
-        data_inicio: Date
-        data_funcionamento: Date
-        ano_letivo: Integer
-        periodo_letivo: Integer
-        ativo: Boolean!
-
-        %% Outros Dados
-        data_fim: Date
-        data_solicitacao_reconhecimento: Date
-        data_limite_reconhecimento: Date
-        suspenso: Boolean!
-        em_extincao: Boolean!
-        extinto: Boolean!
-
-        codigo: String!!
+    class CursoCampus {
+        _: VerDiagramaCursos
         modalidade: Modalidade
-        plano_ensino: Boolean!
-        quantidade_vagas: Integer
-
-        %% cursos Licenciatura
         area: AreaCurso
-        coordenadores_estagio_docente: "1" --> "0..*" IfrnId
-        %% cursos tecnológicos ou FIC
         eixo: EixoTecnologico
-
-        %% cursos técnicos concomitantes e subsequentes
         curso_tecnico: CursoTecnico
-
-        %% cursos de pós-graduação
         area_capes: AreaCapes
-
         area_curso_formacao_superior: AreaCursoFormacaoSuperior
-
-        exige_enade: Boolean!
-        justificativa_dispensa_ingressante: JustificativaDispensaEnade 
-        processamento_enade: Boolean!
-
-        periodicidade: StringChoice
-        exige_colacao_grau: Boolean!
-        assinatura_digital: Boolean!
-        emite_diploma: Boolean!
-        assinatura_eletronica: Boolean!
+        justificativa_dispensa_ingressante: JustificativaDispensaEnade
         area_concentracao: AreaConcentracao
-        programa: String
         diretoria: Diretoria
-        extensao: Boolean
         coordenador: IfrnId
-        numero_portaria_coordenador: String
         coordenador_2: IfrnId
-        numero_portaria_coordenador_2: String
-        matrizes: "1" --> "0..*" Matriz
+        matrizes: Matriz
         mesmo_curso: CursoCampus
-
-        %% Titulo do certificado de conclusão
-        titulo_certificado_masculino: String
-        titulo_certificado_feminino: String
-
-        %% Atributo de Minicurso
-        ppc: File 
-        ch_total: Integer
-        ch_aula: Integer
-        tipo_hora_aula: StringChoice
-        resolucao_criacao: Text
-
-        fator_esforco_curso: Decimal(4, 2)
-
-        %% Autoinstrucional
-        autoinstrucional: Boolean
-
-    }
-
-    class MatrizCurso {
-        curso_campus: CursoCampus!
-        matriz: Matriz!
-
-        %% Ato normativo
-        resolucao_criacao: Text
-        resolucao_data: Date
-        %% Ato de reconhecimento
-        reconhecimento_texto: Text
-        reconhecimento_data: Date
-        unique_together = [('matriz', 'curso_campus')]
-    }
-    class RotuloModulo {
-        matriz: Matriz
-        descricao: String!
-        tipo_modulo: IntegerChoice!
-
-        unique_together = [('matriz', 'tipo_modulo')]
     }
     class Minicurso {
-    }
-    class ConteudoMinicurso {
-        descricao: String!
-        ch: Integer!
-        minicurso: Minicurso!
-    }
-    class Modalidade {
-        descricao: String!!
-        nivel_ensino: NivelEnsino
-    }
-    class AreaCurso {
-        descricao: String!!
-    }
-    class EixoTecnologico {
-        descricao: String!!
-        codigo_inep: String
-    }
-    class NivelEnsino {
-        descricao: String!!
+        _: VerDiagramaCursos
     }
     class IfrnId {
-        tipo_relacionamento: IntegerChoice
-        ativo: Boolean!
-        username: String!!
-        first_name: String!
-        last_name: String!
-        email: String!
-        is_active: Boolean
-        eh_servidor: Boolean!
-        eh_aluno: Boolean!
-        eh_prestador: Boolean!
-        eh_usuarioexterno: Boolean!
-        eh_docente: Boolean!
-        eh_tecnico_administrativo: Boolean!
-        eh_estrangeiro: Boolean!
-        nome: String!
-        nome_usual: String!
-        nome_social: String
-        nome_registro: String
-        email: Email
-        email_secundario: Email!
-    }
-    class TipoComponente{
-        descricao: String!
-    }
-    class NaturezaParticipacao {
-        descricao: String!!
-    } 
-    class Nucleo{
-        descricao: String!!
+        _: VerDiagramaIfrnId
     }
     class Turma{
         codigo: String!
@@ -380,10 +132,10 @@ classDiagram
         percentual_ch: Integer
         periodo_letivo_ch: Integer
     }
-    class TipoProfessorDiario{
+    class TipoProfessorDiario {
         descricao: String!!
     }
-    class Aula{
+    class Aula {
         professor_diario: ProfessorDiario!
         etapa: Integer!
         quantidade: Integer!
@@ -395,7 +147,7 @@ classDiagram
         outros_professor_diario: Many(ProfessorDiario)
         registro_frequencia_confirmado: Boolean!
     }
-    class Falta{
+    class Falta {
         matricula_diario: MatriculaDiario!
         aula: Aula!
         quantidade: Integer!
@@ -403,29 +155,7 @@ classDiagram
         contabilizar: Boolean!
     }
 
-    Componente --> TipoComponente
-    Componente --> NivelEnsino
-    Componente --> GrupoAtuacao
-
-    ComponenteCurricular --> Matriz
-    ComponenteCurricular --> Componente
-    ComponenteCurricular --> ClassificacaoComplementarComponenteCurricular
-    ComponenteCurricular --> Nucleo
-
-    CursoCampus --> Modalidade
-    CursoCampus --> AreaCurso
-    CursoCampus --> EixoTecnologico
-    CursoCampus --> CursoTecnico
     CursoCampus --> IfrnId
-
-    Matriz --> NivelEnsino
-    Matriz --> NaturezaParticipacao
-    Matriz --> Componente
-    
-    MatrizCurso --> Curso
-    MatrizCurso --> Matriz
-
-    RotuloModulo --> Matriz
 
     Minicurso --|> Curso
 
