@@ -48,13 +48,6 @@ classDiagram
         url_moodle: String
         url_ambiente_virtual: String
     }
-    class Convenio{
-        descricao: String!!
-    }
-    class Polo{
-        descricao: String!
-        sigla: String!
-    }
     class MonitorMinicurso{
         aluno: IfrnId!
         turma_minicurso: TurmaMinicurso!
