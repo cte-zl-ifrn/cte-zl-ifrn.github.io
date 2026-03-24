@@ -72,25 +72,19 @@ classDiagram
         ch_semanal_1s: Integer
         ch_semanal_2s: Integer
     }
-
-
-    class Matriz{
-        _: VerDiagramaMatriz
-    }
-
     class Diario{
         _: VerDiagramaDiario
     }
 
     Componente "N" --> "1" TipoComponente
     Componente "N" --> "1" NivelEnsino
-
-    ComponenteCurricular "N" --> "1" Matriz
     ComponenteCurricular "N" --> "1" Componente
 
     Diario "N" --> "1" ComponenteCurricular
 ```
 
+
+## Check constraints
 
 > **ComponenteCurricular**
 > 1. tipo = `[[1, 'Regular'], [2, 'Seminário'], [3, 'Prática Profissional'], [4, 'Trabalho de Conclusão de Curso'], [5, 'Atividade de Extensão'], [6, 'Prática como Componente Curricular'], [7, 'Visita Técnica / Aula da Campo'], [8, 'Componentes Extracurriculares']]`
