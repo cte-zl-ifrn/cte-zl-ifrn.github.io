@@ -23,9 +23,6 @@ classDiagram
         matrizes: Matriz
         mesmo_curso: CursoCampus
     }
-    class Minicurso {
-        _: VerDiagramaCursos
-    }
     class Turma{
         _: VerDiagramaTurma
     }
@@ -44,17 +41,6 @@ classDiagram
         integracao_com_moodle: Boolean
         url_moodle: String
         url_ambiente_virtual: String
-    }
-    class MonitorMinicurso{
-        aluno: IfrnId! 🥸
-        turma_minicurso: TurmaMinicurso!
-        carga_horaria: Integer
-    }
-    class ProfessorMinicurso{
-        professor: IfrnId! 🥸
-        turma_minicurso: TurmaMinicurso!
-        carga_horaria: Integer
-        carga_horaria_semanal: Decimal
     }
     class Diario{
         turma: Turma!
@@ -125,16 +111,6 @@ classDiagram
     CursoCampus "1" <-- "n" Turma
     ComponenteCurricular "1" <-- "n" Diario
     
-    Minicurso --|> Curso
-
-    TurmaMinicurso --> Minicurso
-
-    MonitorMinicurso --> TurmaMinicurso
-
-    ProfessorMinicurso --> TurmaMinicurso
-
-
-    %% TurmaMinicurso -- Turno
     %% Diario -- Turno
     %% Diario -- HorarioCampus
     %% Diario -- EstruturaCurso
@@ -143,7 +119,6 @@ classDiagram
 
     ProfessorDiario --> Diario
     ProfessorDiario --> TipoProfessorDiario
-
 
     Aula --> ProfessorDiario
 ```
