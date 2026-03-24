@@ -4,6 +4,12 @@
 
 ```mermaid
 classDiagram
+    class CursoCampus {
+        _: VerDiagramaCurso
+    }
+    class IfrnId {
+        _: VerDiagramaIfrnId
+    }
     class Turma{
         codigo: String!
         descricao: String!
@@ -34,23 +40,6 @@ classDiagram
         url_moodle: String
         url_ambiente_virtual: String
     }
-
-    class Turno {
-        descricao: String!!
-        codigo_enade: String
-    }
-    class CursoCampus {
-        _: VerDiagramaCurso
-    }
-    class Matriz {
-        _: VerDiagramaMatriz
-    }
-    class Polo {
-        _: VerDiagramaPolo
-    }
-    class Convenio{
-        descricao: String!!
-    }
     class Minicurso {
     }
     class ParticipanteTurmaMinicurso {
@@ -70,17 +59,11 @@ classDiagram
         carga_horaria: Integer
         carga_horaria_semanal: Decimal
     }
-    class IfrnId {
-        _: VerDiagramaIfrnId
-    }
 
-    Turma "n" --> "1" Polo
-    Turma  "n" --> "1" Convenio
     Turma  "n" --> "1" CursoCampus
-    Turma "n" --> "1" Matriz
-    Turma "n" --> "1" Turno
 
-    TurmaMinicurso "n" --> "1" Turno
+    CursoCampus <|-- Minicurso
+
     TurmaMinicurso "n" --> "1" Minicurso
     TurmaMinicurso "1" <-- "n" ParticipanteTurmaMinicurso
     ParticipanteTurmaMinicurso "n" <-- "1" IfrnId: aluno
@@ -89,6 +72,12 @@ classDiagram
     TurmaMinicurso "1" <-- "n" ProfessorMinicurso
     ProfessorMinicurso "1" <-- "n" IfrnId : professor
 
-    CursoCampus <|-- Minicurso
-    CursoCampus "n" <-- "n "Matriz
 ```
+
+
+## Observações
+
+1. Os models abaixo não foram utilizados pois não pareceram ter relevância para a integração:
+   1. `edu.cadastros_gerais.Turno`
+   2. `edu.cadastros_gerais.Convenio`
+   3. `edu.polos.Polo`
