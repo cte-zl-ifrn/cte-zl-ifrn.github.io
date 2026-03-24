@@ -59,7 +59,7 @@ classDiagram
         url_moodle: String
         url_ambiente_virtual: String
     }
-    class Convneio{
+    class Convenio{
         descricao: String!!
     }
     class Polo{
